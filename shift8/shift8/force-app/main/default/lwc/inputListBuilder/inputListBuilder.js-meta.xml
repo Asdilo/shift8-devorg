@@ -7,4 +7,11 @@
         <target>lightning__RecordPage</target>
         <target>lightning__HomePage</target>
     </targets>
+        <targetConfigs>   
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+            <property name="title" type="String" default="Input List Builder" label="Enter the title"/>
+            <property name="showEmpty" type="Boolean" default="false" label="Show Empty State?"/><!-- Use this only to see what it looks like in dev -->
+            <property name="listType" datasource="typeA,type2,type3" type="String" label="Choose List" />
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>

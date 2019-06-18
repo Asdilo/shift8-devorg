@@ -2,37 +2,17 @@
     <lightning-card>
         <h2 slot="title" class="header-title-container">
             <lightning-icon icon-name="custom:custom94" size="small"></lightning-icon>
-            <span class="slds-card__header-link slds-truncate slds-m-left_small" title="Input List Builder">Input List
-                Builder</span>
+            <span class="slds-card__header-link slds-truncate slds-m-left_small" title={title}>{title}</span>
         </h2>
-        <div class="slds-p-horizontal_small slds-grid slds-wrap">
-            <div class="slds-col slds-grid slds-gutters slds-size_1-of-1">
-                <div class="slds-col">
-                    <lightning-input name="search" label="Medication Name" type="search"
-                        placeholder="Search Medications"></lightning-input>
-                </div>
-                <div class="slds-col">
-                    <lightning-input type="number" name="dose" label="Dose" ></lightning-input>
-                </div>
-                <div class="slds-col">
-                    <lightning-combobox name="frequency" label="Frequency" value={value} placeholder="Select Frequency"
-                        options={options} onchange={handleChange}></lightning-combobox>
-                </div>
-                <div class="slds-col">
-                    <lightning-input type="date" name="date-input" label="Date Started"
-                        placeholder="Medication Start Date"></lightning-input>
-                </div>
-                <div class="slds-col">
-                    <lightning-input type="date" name="date-input" label="Date Started"
-                        placeholder="Medication Start Date"></lightning-input>
-                </div>
-            </div>
-            <div class="slds-col slds-size_1-of-1 slds-m-vertical_medium">
-                <button class="slds-button slds-button_brand">Add</button>
-            </div>
-        </div>
+        <template if:true={showEmpty}>
+            <c-list-builder-empty></c-list-builder-empty>
+        </template>
+        <template if:false={showEmpty}>
+            <c-list-medications></c-list-medications>
+        </template>
+
         <footer slot="footer" class="slds-text-align_right">
-            <button class="slds-button slds-button_neutral">Cancel</button>
+            <button class="slds-button slds-button_neutral slds-m-right_small">Cancel</button>
             <button class="slds-button slds-button_brand">Save</button>
         </footer>
     </lightning-card>

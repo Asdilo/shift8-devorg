@@ -1,0 +1,34 @@
+<template>
+    <div class="slds-p-horizontal_small slds-grid slds-wrap">
+        <div class="slds-col slds-grid slds-grid_vertical-align-end slds-size_1-of-1">
+            <div class="slds-col slds-size_3-of-12 slds-p-right_small">
+                <lightning-input name="search" label="Medication Name" type="search" placeholder="Search Medications">
+                </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-p-right_small">
+                <lightning-input type="number" name="dose" label="Dose"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-p-right_small">
+                <lightning-combobox name="unit" label="Unit" value={value} options={unitOptions}
+                    onchange={handleChange}></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-p-right_small">
+                <lightning-input type="number" name="taken" label="Number Taken"></lightning-input>
+            </div>
+            <div class="slds-col slds-size_2-of-12 slds-p-right_small">
+                <lightning-combobox name="frequency" label="Frequency" value={value} placeholder="Select Frequency"
+                    options={freqOptions} onchange={handleChange}></lightning-combobox>
+            </div>
+            <div class="slds-col slds-size_3-of-12 slds-p-right_small">
+                <lightning-input type="date" name="date-input" label="Date Started" placeholder="Medication Start Date">
+                </lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-text-align_right">
+                <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"></lightning-button-icon>
+            </div>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-m-vertical_medium">
+            <button class="slds-button slds-button_brand">Add</button>
+        </div>
+    </div>
+</template>

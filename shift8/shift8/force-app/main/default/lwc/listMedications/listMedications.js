@@ -1,15 +1,12 @@
 import { LightningElement, track } from "lwc";
 
 export default class ListMedications extends LightningElement {
-  @track value;
-
-  get freqOptions() {
-    return [
+  @track value = [
       { label: "As Needed", value: "asNeeded" },
       { label: "Once Daily", value: "onceDaily" },
       { label: "Once Weekly", value: "onceWeekly" }
     ];
-  }
+
 
   get unitOptions() {
     return [

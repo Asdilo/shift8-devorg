@@ -5,6 +5,12 @@
         "paths": {
             "c/inputListBuilder": [
                 "inputListBuilder/inputListBuilder.js"
+            ],
+            "c/listBuilderEmpty": [
+                "listBuilderEmpty/listBuilderEmpty.js"
+            ],
+            "c/listMedications": [
+                "listMedications/listMedications.js"
             ]
         }
     },

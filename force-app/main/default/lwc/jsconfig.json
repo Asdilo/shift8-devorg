@@ -11,6 +11,9 @@
             ],
             "c/listMedications": [
                 "listMedications/listMedications.js"
+            ],
+            "c/cssAnimations": [
+                "cssAnimations/cssAnimations.js"
             ]
         }
     },

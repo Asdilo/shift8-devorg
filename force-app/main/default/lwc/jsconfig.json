@@ -3,6 +3,9 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/cssAnimations": [
+                "cssAnimations/cssAnimations.js"
+            ],
             "c/inputListBuilder": [
                 "inputListBuilder/inputListBuilder.js"
             ],
@@ -11,9 +14,6 @@
             ],
             "c/listMedications": [
                 "listMedications/listMedications.js"
-            ],
-            "c/cssAnimations": [
-                "cssAnimations/cssAnimations.js"
             ]
         }
     },

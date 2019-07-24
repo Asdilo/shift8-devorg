@@ -1,3 +1,8 @@
 .slds-is-collapsed {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.slds-is-open>.slds-accordion__content {
+    -webkit-transition: height 2s, opacity 2s; /* Safari prior 6.1 */
+    transition: height 2s, opacity 2s !important;
+}

@@ -11,8 +11,6 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
-            <!-- <property name="title" type="String" default="Component Title" label="Component Title"/>
-            <property name="icon" type="String" default="custom:custom102" label="Icon For Container"/> -->
             <supportedFormFactors>
                 <supportedFormFactor type="Small" />
                 <supportedFormFactor type="Large" />

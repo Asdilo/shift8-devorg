@@ -1,6 +1,7 @@
 <template>
     <div>
-        <lightning-datatable key-field="id" data={data} show-row-number-column row-number-offset={rowOffset} columns={columns}>
+        <!-- So many attributes...but neccesary for this component-->
+        <lightning-datatable key-field="id" data={data} columns={columns} errors={errors} show-row-number-column row-number-offset={rowOffset}  load-more-offset="30" >
         </lightning-datatable>
     </div>
 

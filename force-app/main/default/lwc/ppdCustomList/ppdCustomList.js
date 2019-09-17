@@ -1,5 +1,6 @@
 import { LightningElement, wire, track } from 'lwc';
-import getAllOpps from "@salesforce/apex/getRecords.getAllOpps";
+import getAllOpps from "@salesforce/apex/getRecords.getAllOpps"; //Pull in public Apex class that get records from DB
+//Create an array of objects that will shape the columns of the table
 const columns = [
     {
       label: "View",
@@ -39,14 +40,19 @@ const columns = [
 
 
 export default class PpdCustomList extends LightningElement {
-
-    @track columns = columns;
+    // Track the following private property’s values - when these change the component will automagically render again
+    @track columns = columns; //assign colomns variable to columns attribute on data table
     @track error;
     @track data;
+
+    //provision data for the table using getAllOpps methods - this is like a reactive web service
     @wire(getAllOpps)
-    wiredOpps({ error, data }) {
+    
+    //If the data is there assign it to the data variable if not create an error
+    wiredData({ error, data }) {
       if (data) {
         this.data = data;
+        //This is for dev purpose just to confirm the data and objects are returning what I want. Remove for prod
         console.log(data);
         console.log(JSON.stringify(data, null, "\t"));
       } else if (error) {

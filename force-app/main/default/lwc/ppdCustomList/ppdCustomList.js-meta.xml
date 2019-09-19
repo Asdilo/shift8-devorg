@@ -8,4 +8,12 @@
         <target>lightning__AppPage</target>
         <target>lightning__RecordPage</target>
         <target>lightning__HomePage</target>
-    </targets></LightningComponentBundle>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+            <property name="title" type="String" default="PPD Custom List View" label="Component Title"/>
+            <property name="styles" type="String" default=" " label="Enter CSS Styles"/>
+            <property name="icon" type="String" default="standard:opportunity" label="Component Icon"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

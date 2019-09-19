@@ -1,4 +1,4 @@
-import { LightningElement, wire, track } from 'lwc';
+import { LightningElement, api, wire, track } from 'lwc';
 import getAllOpps from "@salesforce/apex/getRecords.getAllOpps"; //Pull in public Apex class that get records from DB
 //Create an array of objects that will shape the columns of the table
 const columns = [
@@ -40,10 +40,25 @@ const columns = [
 
 
 export default class PpdCustomList extends LightningElement {
+    // API the following variables to make them accesible in the App Builder via the meta xml
+    @api title = "Default Title";
+    @api icon = "custom:custom102";
+    @api styles = "";
+
     // Track the following private property’s values - when these change the component will automagically render again
     @track columns = columns; //assign colomns variable to columns attribute on data table
     @track error;
     @track data;
+    @track value = 'bravo';
+
+    //Filter Options and Choices can live here to use for the UI
+    get options() {
+        return [
+            { label: 'Alpha', value: 'alpha' },
+            { label: 'Bravo', value: 'bravo' },
+            { label: 'Charlie', value: 'charlie' },
+        ];
+    }
 
     //provision data for the table using getAllOpps methods - this is like a reactive web service
     @wire(getAllOpps)

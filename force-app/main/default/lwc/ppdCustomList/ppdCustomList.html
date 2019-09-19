@@ -1,8 +1,25 @@
 <template>
-    <div>
-        <!-- So many attributes...but neccesary for this component-->
-        <lightning-datatable key-field="id" data={data} columns={columns} errors={errors} show-row-number-column row-number-offset={rowOffset}  load-more-offset="30" >
-        </lightning-datatable>
-    </div>
-
+    <lightning-card>
+        <h2 slot="title">
+            <lightning-icon icon-name={icon} size="medium" class="slds-m-right_small"></lightning-icon>
+            <strong class="slds-text-heading_small">{title}</strong>
+        </h2>
+        <!-- Search and Filtering UI-->
+        <div class="slds-grid slds-grid_align-spread  slds-p-around_medium slds-m-bottom_medium">
+            <div class="slds-col">
+                <lightning-input name="enter-search" label="" placeholder="Search Records" type="search">
+                </lightning-input>
+            </div>
+            <div class="slds-col">
+                <lightning-combobox name="filters" label="Filters" value={value} placeholder="Select Filters"
+                    options={options} onchange={handleChange}></lightning-combobox>
+            </div>
+        </div>
+        <div>
+            <!-- So many attributes...but neccesary for this component-->
+            <lightning-datatable key-field="id" data={data} columns={columns} errors={errors} show-row-number-column
+                row-number-offset={rowOffset} load-more-offset="20">
+            </lightning-datatable>
+        </div>
+    </lightning-card>
 </template>

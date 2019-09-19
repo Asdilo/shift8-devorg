@@ -27,3 +27,5 @@ ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
 force-app/main/default/lwc/jsconfig.json
+.vscode/settings.json
+.vscode/settings.json

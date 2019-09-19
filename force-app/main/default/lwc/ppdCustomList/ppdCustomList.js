@@ -24,15 +24,37 @@ const columns = [
     {
       label: "Stage Name",
       fieldName: "StageName",
-      type: "text",
+      type: "picklist",
       sortable: true,
       editable: true
     },
     {
-      label: "Close date",
+      label: "Close Date",
       fieldName: "CloseDate",
       type: "date",
       cellAttributes:{ iconName: "standard:date_time", iconPosition: "left" },
+      sortable: true,
+      editable: true
+    },
+    {
+      label: "Type",
+      fieldName: "Type",
+      type: "picklist",
+      sortable: true,
+      editable: true
+    },
+    {
+      label: "Opportunity Owner",
+      fieldName: "OwnerId",
+      type: "lookup",
+      sortable: true,
+      editable: true
+    },
+    {
+      label: "Amount",
+      fieldName: "Amount",
+      type: "currency",
+      cellAttributes:{ iconName: "standard:moneybag", iconPosition: "left" },
       sortable: true,
       editable: true
     }
@@ -41,9 +63,10 @@ const columns = [
 
 export default class PpdCustomList extends LightningElement {
     // API the following variables to make them accesible in the App Builder via the meta xml
-    @api title = "Default Title";
-    @api icon = "custom:custom102";
+    @api title = "PPD Custom List View";
+    @api icon = "standard:opportunity";
     @api styles = "";
+    @api classes = "";
 
     // Track the following private property’s values - when these change the component will automagically render again
     @track columns = columns; //assign colomns variable to columns attribute on data table

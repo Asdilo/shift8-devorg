@@ -1,25 +1,40 @@
 <template>
-    <lightning-card>
-        <h2 slot="title">
-            <lightning-icon icon-name={icon} size="medium" class="slds-m-right_small"></lightning-icon>
-            <strong class="slds-text-heading_small">{title}</strong>
-        </h2>
-        <!-- Search and Filtering UI-->
-        <div class="slds-grid slds-grid_align-spread  slds-p-around_medium slds-m-bottom_medium">
+    <div class={classes} style={styles} >
+        <lightning-card>
+            <h2 slot="title">
+                <lightning-icon icon-name={icon} size="medium" class="slds-m-right_small"></lightning-icon>
+                <strong class="slds-text-heading_small">{title}</strong>
+            </h2>
+            <lightning-button-group slot="actions">
+                <lightning-button label="New"></lightning-button>
+                <lightning-button label="Edit"></lightning-button>
+                <lightning-button label="Save" icon-name="utility:save"></lightning-button>
+                <lightning-button-menu alternative-text="Show menu">
+                    <lightning-menu-item label="Menu Item One" value="item1"></lightning-menu-item>
+                    <lightning-menu-item label="Menu Item Two" value="item2"></lightning-menu-item>
+                    <lightning-menu-item label="Menu Item Three" value="item3"></lightning-menu-item>
+                </lightning-button-menu>
+            </lightning-button-group>
+            <!-- Search and Filtering UI-->
+            <div class="slds-grid  slds-p-horizontal_medium slds-m-bottom_medium">
+                <!-- Searh is probably out of scope, hence the commenting out
             <div class="slds-col">
                 <lightning-input name="enter-search" label="" placeholder="Search Records" type="search">
                 </lightning-input>
             </div>
-            <div class="slds-col">
-                <lightning-combobox name="filters" label="Filters" value={value} placeholder="Select Filters"
-                    options={options} onchange={handleChange}></lightning-combobox>
+            -->
+
+                <div class="slds-col">
+                    <lightning-combobox name="filters" label="Filters" value={value} placeholder="Select Filters"
+                        options={options} onchange={handleChange}></lightning-combobox>
+                </div>
             </div>
-        </div>
-        <div>
-            <!-- So many attributes...but neccesary for this component-->
-            <lightning-datatable key-field="id" data={data} columns={columns} errors={errors} show-row-number-column
-                row-number-offset={rowOffset} load-more-offset="20">
-            </lightning-datatable>
-        </div>
-    </lightning-card>
+            <div class="slds-scrollable_y">
+                <!-- So many attributes...but neccesary for this component-->
+                <lightning-datatable key-field="id" data={data} columns={columns} errors={errors}
+                    show-row-number-column row-number-offset={rowOffset} load-more-offset="20">
+                </lightning-datatable>
+            </div>
+        </lightning-card>
+    </div>
 </template>

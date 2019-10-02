@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="videoPlayer">
+    <apiVersion>46.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Video Player</masterLabel>
+    <description>This custom component allows you to link in any video and add to your page layouts.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+            <property name="title" type="String" default="Video Player" label="Component Title"/>
+            <property name="text" type="String" default="Description Text Here" label="Component Text"/>
+            <property name="styles" type="String" default=" " label="Enter CSS Styles"/>
+            <property name="classes" type="String" default=" " label="Enter CSS Classes"/>
+            <property name="icon" type="String" default="standard:opportunity" label="Component Icon"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

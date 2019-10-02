@@ -17,6 +17,9 @@
             ],
             "c/ppdCustomList": [
                 "ppdCustomList/ppdCustomList.js"
+            ],
+            "c/videoPlayer": [
+                "videoPlayer/videoPlayer.js"
             ]
         }
     },

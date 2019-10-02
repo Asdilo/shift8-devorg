@@ -11,11 +11,12 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+            <property name="icon" type="String" default="doctype:video" label="Component Icon"/>
             <property name="title" type="String" default="Video Player" label="Component Title"/>
+            <property name="source" type="String" default="https://www.asteriskloftis.com" label="Source Link"/>
             <property name="text" type="String" default="Description Text Here" label="Component Text"/>
             <property name="styles" type="String" default=" " label="Enter CSS Styles"/>
             <property name="classes" type="String" default=" " label="Enter CSS Classes"/>
-            <property name="icon" type="String" default="standard:opportunity" label="Component Icon"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

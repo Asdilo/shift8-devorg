@@ -20,6 +20,9 @@
             ],
             "c/videoPlayer": [
                 "videoPlayer/videoPlayer.js"
+            ],
+            "c/iframeContainer": [
+                "iframeContainer/iframeContainer.js"
             ]
         }
     },

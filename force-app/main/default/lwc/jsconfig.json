@@ -6,6 +6,9 @@
             "c/cssAnimations": [
                 "cssAnimations/cssAnimations.js"
             ],
+            "c/iframeContainer": [
+                "iframeContainer/iframeContainer.js"
+            ],
             "c/inputListBuilder": [
                 "inputListBuilder/inputListBuilder.js"
             ],
@@ -21,8 +24,8 @@
             "c/videoPlayer": [
                 "videoPlayer/videoPlayer.js"
             ],
-            "c/iframeContainer": [
-                "iframeContainer/iframeContainer.js"
+            "c/tileList": [
+                "tileList/tileList.js"
             ]
         }
     },

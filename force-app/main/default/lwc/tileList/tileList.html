@@ -1,10 +1,24 @@
 <template>
     <lightning-card>
         <h2 slot="title">
-            <lightning-icon icon-name={icon} size="medium" class="slds-m-right_small"></lightning-icon>
+            <lightning-icon icon-name={icon} size="small" class="slds-m-right_small"></lightning-icon>
             <strong class="slds-text-heading_small">{title}</strong>
         </h2>
-
-        
+        <div class="tile-grid slds-p-horizontal_medium">
+            <article class="slds-tile">
+                <h3 class="slds-tile__title slds-truncate" title="Custom Tile">
+                  <a href="javascript:void(0);">Custom Tile</a>
+                  <span class="slds-float_right slds-text-color_weak">Date Text</span>
+                </h3>
+                <div class="slds-tile__detail">
+                  <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="First Label">First Label:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Description for first label">Description for first label</dd>
+                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">Second Label:</dt>
+                    <dd class="slds-item_detail slds-truncate" title="Description for second label">Description for second label</dd>
+                  </dl>
+                </div>
+              </article>
+        </div>
     </lightning-card>
 </template>

@@ -11,7 +11,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
-            <property name="icon" type="String" default="doctype:video" label="Component Icon"/>
+            <property name="icon" type="String" default="standard:queue" label="Component Icon"/>
             <property name="title" type="String" default="Tile List" label="Component Title"/>
         </targetConfig>
     </targetConfigs>

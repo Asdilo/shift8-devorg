@@ -21,11 +21,11 @@
             "c/ppdCustomList": [
                 "ppdCustomList/ppdCustomList.js"
             ],
-            "c/videoPlayer": [
-                "videoPlayer/videoPlayer.js"
-            ],
             "c/tileList": [
                 "tileList/tileList.js"
+            ],
+            "c/videoPlayer": [
+                "videoPlayer/videoPlayer.js"
             ]
         }
     },

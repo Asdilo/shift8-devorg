@@ -1,22 +1,28 @@
 <template>
-    <lightning-card>
-        <h2 slot="title">
-            <lightning-icon icon-name={icon} size="small" class="slds-m-right_small"></lightning-icon>
-            <strong class="slds-text-heading_small">{title}</strong>
-        </h2>
-        <div class="tile-grid slds-p-horizontal_medium">
-            <article class="slds-tile">
-                <h3 class="slds-tile__title slds-truncate" title="Custom Tile">
-                  <a href="javascript:void(0);">Custom Tile</a>
-                  <span class="slds-float_right slds-text-color_weak">10/12/2019, 7:57 AM</span>
-                </h3>
-                <div class="slds-tile__detail">
-                  <dl class="slds-list_horizontal slds-wrap">
-                    <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">Variation:</dt>
-                    <dd class="slds-item_detail slds-truncate" title="Description for second label">Description for second label</dd>
-                  </dl>
-                </div>
-              </article>
-        </div>
-    </lightning-card>
+  <lightning-card>
+    <h2 slot="title">
+      <lightning-icon icon-name={icon} size="small" class="slds-m-right_small"></lightning-icon>
+      <strong class="slds-text-heading_small">{title}</strong>
+    </h2>
+    <div class="tile-grid slds-p-horizontal_medium">
+      <template for:each={results} for:item="result">
+        <article key={result.uniqueId} class="slds-tile">
+          <h3 class="slds-tile__title slds-truncate" title="Custom Tile">
+            <a href={result.experimentLink}>{result.experimentName}</a>
+            <span class="slds-float_right slds-text-color_weak">
+                <lightning-formatted-date-time value={result.dateTime} year="numeric" month="numeric" day="numeric" hour="2-digit"
+                minute="2-digit" time-zone-name="short" hour12="true"></lightning-formatted-date-time>
+            </span>
+          </h3>
+          <div class="slds-tile__detail">
+            <dl class="slds-list_horizontal slds-wrap">
+              <dt class="slds-item_label slds-text-color_weak slds-truncate" title="Second Label">{result.variationName} :</dt>
+              <dd class="slds-item_detail slds-truncate" title="Description for second label">Description for second
+                label</dd>
+            </dl>
+          </div>
+        </article>
+      </template>
+    </div>
+  </lightning-card>
 </template>

@@ -5,34 +5,34 @@ const results = [
   {
     uniqueId: "A",
     experimentName: "Streamline Checkout Flow",
-    variationName: "Variation URL Link Here",
-    variationLink: "https://www.optimizely.com/",
-    dateTime: 1547250828000,
-    experimentLink: "https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Experiment__c/a033k00000QHiqjAAD/view?ws=%2Flightning%2Fr%2FProject__c%2Fa083k00001fMbx8AAC%2Fview"
+    variationName: "Remove Edit Function from Checkout",
+    variationLink: "https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Variation__c/a0H3k00000rZ583EAC/view",
+    dateTime: 1573242019000,
+    experimentLink: "https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Experiment__c/a033k00000QHiqjAAD/view"
   },
   {
     uniqueId: "B",
     experimentName: "Checkout CTA Test",
-    variationName: "Variation URL Link Here",
-    variationLink: "https://www.optimizely.com/",
-    dateTime: 1547250828000,
-    experimentLink:"https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Experiment__c/a033k00000QHiqiAAD/view?ws=%2Flightning%2Fr%2FProject__c%2Fa083k00001fMbx8AAC%2Fview"
+    variationName: "Proceed to Checkout",
+    variationLink: "https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Variation__c/a0H3k00000rZ586EAC/view",
+    dateTime: 1573242019000,
+    experimentLink:"https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Experiment__c/a033k00000QHiqiAAD/view"
   },
   {
     uniqueId: "C",
     experimentName: "Cyber Monday Discounts",
-    variationName: "Variation URL Link Here",
-    variationLink: "https://www.optimizely.com/",
-    dateTime: 1547250828000,
-    experimentLink:"https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Experiment__c/a033k00000QHiqnAAD/view?ws=%2Flightning%2Fr%2FProject__c%2Fa083k00001fMbx8AAC%2Fview"
+    variationName: "20% off new shoppers",
+    variationLink: "https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Variation__c/a0H3k00000rZ57rEAC/view",
+    dateTime: 1573242019000,
+    experimentLink:"https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Experiment__c/a033k00000QHiqnAAD/view"
   },
   {
     uniqueId: "D",
     experimentName: "Navigation Image Test",
-    variationName: "Variation URL Link Here",
-    variationLink: "https://www.optimizely.com/",
-    dateTime: 1547250828000,
-    experimentLink:"https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Experiment__c/a033k00000QHiqsAAD/view?ws=%2Flightning%2Fr%2FProject__c%2Fa083k00001fMbx8AAC%2Fview"
+    variationName: "One hero image",
+    variationLink: "https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Variation__c/a0H3k00000rZ57XEAS/view",
+    dateTime: 1573094495000,
+    experimentLink:"https://optimizely-df19demo-dev-ed.lightning.force.com/lightning/r/Experiment__c/a033k00000QHiqsAAD/view"
   }
 ];
 export default class TileList extends LightningElement {

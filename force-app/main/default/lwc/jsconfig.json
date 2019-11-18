@@ -26,6 +26,9 @@
             ],
             "c/customList": [
                 "customList/customList.js"
+            ],
+            "c/customTable": [
+                "customTable/customTable.js"
             ]
         }
     },

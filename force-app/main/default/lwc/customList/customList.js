@@ -63,7 +63,7 @@ const columns = [
 
 export default class CustomList extends LightningElement {
     // API the following variables to make them accesible in the App Builder via the meta xml
-    @api title = "PPD Custom List View";
+    @api title = "Custom List View";
     @api icon = "standard:opportunity";
     @api styles = "";
     @api classes = "";

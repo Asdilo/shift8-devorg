@@ -2,8 +2,8 @@
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="tileList">
     <apiVersion>46.0</apiVersion>
     <isExposed>true</isExposed>
-    <masterLabel>Experiment History List</masterLabel>
-    <description>This custom component allows you to list out a history of Experiment interaction.</description>
+    <masterLabel>Tile List</masterLabel>
+    <description>This custom component allows you to list out items in a custom tile display.</description>
     <targets>
         <target>lightning__AppPage</target>
         <target>lightning__RecordPage</target>

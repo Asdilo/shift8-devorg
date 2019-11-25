@@ -18,14 +18,17 @@
             "c/listMedications": [
                 "listMedications/listMedications.js"
             ],
-            "c/ppdCustomList": [
-                "ppdCustomList/ppdCustomList.js"
-            ],
             "c/tileList": [
                 "tileList/tileList.js"
             ],
             "c/videoPlayer": [
                 "videoPlayer/videoPlayer.js"
+            ],
+            "c/customList": [
+                "customList/customList.js"
+            ],
+            "c/customTable": [
+                "customTable/customTable.js"
             ]
         }
     },

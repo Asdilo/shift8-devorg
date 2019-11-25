@@ -1,0 +1,43 @@
+<template>
+    <lightning-accordion allow-multiple-sections-open>
+        <!-- Template iterator for each result expected to be returned Unique ID is oppInfoBudgetID-->
+        <template for:each={results} for:item="result">
+            <lightning-accordion-section key={result.oppInfoBudgetId} name={result.oppInfoRegionName} label={result.oppInfoRegionName}>
+               <!-- Data Tables data come fromt he authResults object, which is an array in the results object -->
+                <lightning-datatable key-field="type" data={result.authResults} columns={columns} hide-checkbox-column>
+                </lightning-datatable>
+                <div class="slds-grid slds-wrap slds-p-around_medium slds-theme_shade">
+                    <div class="slds-col slds-size_1-of-1 slds-grid slds-grid_vertical-align-end  slds-p-bottom_small">
+                        <div class="slds-col slds-grid slds-grid_vertical-align-end slds-size_9-of-12">
+                            <lightning-input type="number" name="input1" label="605 Direct" formatter="currency"
+                                 class="slds-m-right_x-small"></lightning-input>
+                            <lightning-input type="number" name="input2" label="605 Evidera Direct" formatter="currency"
+                                 class="slds-m-right_x-small"></lightning-input>
+                            <lightning-input type="number" name="input3" label="606 Direct" formatter="currency"
+                                 class="slds-m-right_x-small"></lightning-input>
+                            <lightning-input type="number" name="input" label="606 Evidera Direct" formatter="currency"
+                                 class="slds-m-right_x-small"></lightning-input>
+                            <lightning-input type="number" name="input1" label="Investigator Grant" formatter="currency"
+                                 class="slds-m-right_x-small"></lightning-input>
+                            <lightning-input type="number" name="input1" label="Pass Through" formatter="currency"
+                                 class="slds-m-right_x-small"></lightning-input>
+                            <lightning-input type="number" name="input1" label="Evidera Indirect" formatter="currency"
+                                 class="slds-m-right_x-small"></lightning-input>
+                        </div>
+
+                        <div class="slds-col slds-size_3-of-12">
+                            <lightning-input type="text" label="Comments" placeholder="Authorization comments">
+                            </lightning-input>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-grid slds-grid_align-end slds-grid_vertical-align-end">
+                        <lightning-button label="Cancel" title="Cancel" class="slds-m-left_x-small"></lightning-button>
+
+                        <lightning-button variant="brand" label="Add New Authorization"
+                            title="Add New Authorizations To All" class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </div>
+            </lightning-accordion-section>
+        </template>
+    </lightning-accordion>
+</template>

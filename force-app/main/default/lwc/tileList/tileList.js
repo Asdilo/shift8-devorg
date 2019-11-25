@@ -1,5 +1,5 @@
 import { LightningElement, api, track } from 'lwc';
-import OptimizelyIcon from '@salesforce/resourceUrl/OptimizelyIcon';
+import CustomIcon from '@salesforce/resourceUrl/CustomIcon';
 
 const results = [
   {
@@ -38,6 +38,6 @@ const results = [
 export default class TileList extends LightningElement {
     @api title;
     @track results = results;
-    optIcon = OptimizelyIcon + '#optimizelyIcon';
+    customIcon = CustomIcon + '#optimizelyIcon';
 
 }

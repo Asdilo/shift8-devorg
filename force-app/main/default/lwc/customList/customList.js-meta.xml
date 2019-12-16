@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="customList">
+    <apiVersion>46.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Custom List View</masterLabel>
+    <description>This is a demo component for a custom list component.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+            <property name="title" type="String" default="PPD Custom List View" label="Component Title"/>
+            <property name="styles" type="String" default=" " label="Enter CSS Styles"/>
+            <property name="classes" type="String" default=" " label="Enter CSS Classes"/>
+            <property name="icon" type="String" default="standard:opportunity" label="Component Icon"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,19 @@
+<template>
+    <lightning-card>
+        <h2 slot="title" class="header-title-container">
+            <lightning-icon icon-name="custom:custom94" size="small"></lightning-icon>
+            <span class="slds-card__header-link slds-truncate slds-m-left_small" title={title}>{title}</span>
+        </h2>
+        <template if:true={showEmpty}>
+            <c-list-builder-empty></c-list-builder-empty>
+        </template>
+        <template if:false={showEmpty}>
+            <c-list-medications></c-list-medications>
+        </template>
+
+        <footer slot="footer" class="slds-text-align_right">
+            <button class="slds-button slds-button_neutral slds-m-right_small">Cancel</button>
+            <button class="slds-button slds-button_brand">Save</button>
+        </footer>
+    </lightning-card>
+</template>

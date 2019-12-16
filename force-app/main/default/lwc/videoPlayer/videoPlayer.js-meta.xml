@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="videoPlayer">
+    <apiVersion>46.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Video Player</masterLabel>
+    <description>This custom component allows you to link to any MP4 video static resource and add to your page layouts.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+            <property name="icon" type="String" default="doctype:video" label="Component Icon"/>
+            <property name="title" type="String" default="Video Player" label="Component Title"/>
+            <property name="source" type="String" default="https://shift8design-dev-ed--c.visualforce.com/resource/1570070004000/DemoVid" label="Source Link"/>
+            <property name="text" type="String" default="Description Text Here" label="Component Text"/>
+            <property name="styles" type="String" default=" " label="Enter CSS Styles"/>
+            <property name="classes" type="String" default=" " label="Enter CSS Classes"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

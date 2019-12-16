@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/cssAnimations": [
+                "cssAnimations/cssAnimations.js"
+            ],
+            "c/iframeContainer": [
+                "iframeContainer/iframeContainer.js"
+            ],
+            "c/inputListBuilder": [
+                "inputListBuilder/inputListBuilder.js"
+            ],
+            "c/listBuilderEmpty": [
+                "listBuilderEmpty/listBuilderEmpty.js"
+            ],
+            "c/listMedications": [
+                "listMedications/listMedications.js"
+            ],
+            "c/tileList": [
+                "tileList/tileList.js"
+            ],
+            "c/videoPlayer": [
+                "videoPlayer/videoPlayer.js"
+            ],
+            "c/customList": [
+                "customList/customList.js"
+            ],
+            "c/customTable": [
+                "customTable/customTable.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}

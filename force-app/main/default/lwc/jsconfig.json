@@ -29,6 +29,9 @@
             ],
             "c/videoPlayer": [
                 "videoPlayer/videoPlayer.js"
+            ],
+            "c/recordForm": [
+                "recordForm/recordForm.js"
             ]
         }
     },

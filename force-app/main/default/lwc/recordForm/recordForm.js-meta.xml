@@ -7,10 +7,10 @@
     <targets>
         <target>lightning__RecordPage</target>
     </targets>
-        <targetConfigs>
+    <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
-            <property name="fields" type="String" default="Name, Type"  label="Enter Comma Seperated Record Fields"/>
-            <property name="columns" type="Integer" default="2"  label="Choose Number of Columns"/>
+            <property name="fields" type="String" default="Name, CreatedById, OwnerId" label="Record Fields" description="Enter comma seperated record fields" />
+            <property name="columns" type="Integer" default="2" label="Number of Columns" description="Enter an interger between 1 and 6"/>
         </targetConfig>
     </targetConfigs>
-    </LightningComponentBundle>
+</LightningComponentBundle>

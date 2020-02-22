@@ -1,15 +1,6 @@
 <template>
-    <lightning-record-form record-id="0064P00000kxO9qQAE" object-api-name="Opportunity" layout-type="Compact" mode="view" columns="2">
-    </lightning-record-form>
-
-    <lightning-record-form 
-        record-id={recordId} 
-        object-api-name={objectApiName} 
-        fields={fields} 
-        columns={columns}
-        mode="view">
-    </lightning-record-form>
-
+<!-- Component will only render if there are fields.
+    This component will automaticall gather the recordId and object name from the record it is on -->
     <template if:true={fieldList}>
         <lightning-record-form 
             record-id={recordId} 

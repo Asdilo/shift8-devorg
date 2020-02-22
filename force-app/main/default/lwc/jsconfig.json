@@ -6,6 +6,12 @@
             "c/cssAnimations": [
                 "cssAnimations/cssAnimations.js"
             ],
+            "c/customList": [
+                "customList/customList.js"
+            ],
+            "c/customTable": [
+                "customTable/customTable.js"
+            ],
             "c/iframeContainer": [
                 "iframeContainer/iframeContainer.js"
             ],
@@ -23,12 +29,6 @@
             ],
             "c/videoPlayer": [
                 "videoPlayer/videoPlayer.js"
-            ],
-            "c/customList": [
-                "customList/customList.js"
-            ],
-            "c/customTable": [
-                "customTable/customTable.js"
             ]
         }
     },

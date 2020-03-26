@@ -32,6 +32,9 @@
             ],
             "c/recordForm": [
                 "recordForm/recordForm.js"
+            ],
+            "c/lwcExample": [
+                "lwcExample/lwcExample.js"
             ]
         }
     },

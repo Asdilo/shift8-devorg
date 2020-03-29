@@ -1,3 +1,28 @@
 <template>
-    
+    <div class={classes}>
+        <lightning-card>
+            <h2 slot="title">
+                <lightning-icon icon-name={icon} size="small" class="slds-var-m-right_small"></lightning-icon>
+                <strong class="slds-text-heading_small">{title}</strong>
+            </h2>
+            <div class="slds-var-p-around_small">
+                <div class="slds-box slds-theme_shade">
+                    Basis: Milestone or Metric
+                </div>
+                <div class="slds-var-m-around_medium">
+                    <lightning-radio-group name="repeatOn"
+                    label="Repeat On"
+                    options={radioOpt}
+                    value={radioVal}
+                    type="button"></lightning-radio-group>                </div>
+            </div>
+            <div slot="footer">
+                <lightning-input type="checkbox" label="Basic option" name="input1"></lightning-input>
+                <lightning-button label="Neutral" title="Non-primary action" onclick={handleClick}
+                    class="slds-var-m-left_x-small"></lightning-button>
+                <lightning-button variant="brand" label="Brand" title="Primary action" onclick={handleClick}
+                    class="slds-var-m-left_x-small"></lightning-button>
+            </div>
+        </lightning-card>
+    </div>
 </template>

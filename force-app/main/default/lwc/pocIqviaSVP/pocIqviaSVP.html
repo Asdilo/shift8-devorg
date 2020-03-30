@@ -12,8 +12,29 @@
             <div class="slds-var-p-around_small">
                 <div class="slds-box slds-theme_shade slds-var-m-bottom_medium">
                     <h4 class="slds-text-heading_small slds-var-m-bottom_small">Visit Plan Trigger</h4>
-                    <lightning-combobox name="region" label="Region or Country" value={regionVal}
-                        placeholder="Select Region" options={regionOpt}></lightning-combobox>
+                    <div>
+                        <lightning-combobox name="triggerType" label="Trigger Type" value={typeVal}
+                            placeholder="Select Type" options={typeOpt}></lightning-combobox>
+
+                        <lightning-combobox name="region" label="Region or Country" value={regionVal}
+                            placeholder="Select Region" options={regionOpt}></lightning-combobox>
+                    </div>
+
+
+                    <div>Milestone
+                        <lightning-input type="number" name="milestoneNumber" required value="1" min="1" max="99">
+                        </lightning-input>
+                        <lightning-combobox name="milestoneInterval" value={mileNumVal} placeholder="Select Interval"
+                        options={intervalOpt}></lightning-combobox>
+                        <lightning-combobox name="milestone" label="Milestone Type" value={milestoneVal}
+                        placeholder="Select Milestone" options={milestoneOpt}></lightning-combobox>
+                        {milestoneVal}
+                    </div>
+
+                    <div>Metric
+
+                    </div>
+
                 </div>
                 <div class="">
                     <h4 class="slds-text-heading_small slds-var-m-bottom_small">Visit Plan Recurrence</h4>
@@ -21,22 +42,19 @@
                     <lightning-input type="number" name="repeatNumber" required value="1" min="1" max="99">
                     </lightning-input>
                     <lightning-combobox name="repeatEvery" value={repeatVal} placeholder="Select Interval"
-                        options={repeatOpt}></lightning-combobox>
+                        options={intervalOpt}></lightning-combobox>
                     <lightning-radio-group name="repeatOn" label="Repeat On" options={radioOpt} value={radioVal}
                         type="button"></lightning-radio-group>
 
-                        This Site Visit Plan ends
-                        <lightning-radio-group name="radioEnds"
-                        label="This Site Visit Plan Ends"
-                        options={endOpt}
-                        value={endVal}
-                         required
-                        type="radio"></lightning-radio-group>
+                    This Site Visit Plan ends
+                    <lightning-radio-group name="radioEnds" label="This Site Visit Plan Ends" options={endOpt}
+                        value={endVal} required type="radio"></lightning-radio-group>
 
-                        <lightning-input type="date" name="endDate" required label="End Date" ></lightning-input>
+                    <lightning-input type="date" name="endDate" required label="End Date"></lightning-input>
 
-                        <lightning-input type="number" name="endNumber" required label="Number of Occurences"  value="5" min="1" max="99">
-                        </lightning-input>
+                    <lightning-input type="number" name="endNumber" required label="Number of Occurences" value="5"
+                        min="1" max="99">
+                    </lightning-input>
 
                 </div>
             </div>
@@ -44,7 +62,8 @@
                 <lightning-input type="checkbox" label="Basic option" name="input1"></lightning-input>
                 <lightning-button label="Cancel" title="Cancel Sit Visit Plan" class="slds-var-m-left_x-small">
                 </lightning-button>
-                <lightning-button variant="brand" label="Save" title="Save Site Visit Plan" class="slds-var-m-left_x-small">
+                <lightning-button variant="brand" label="Save" title="Save Site Visit Plan"
+                    class="slds-var-m-left_x-small">
                 </lightning-button>
             </div>
         </lightning-card>

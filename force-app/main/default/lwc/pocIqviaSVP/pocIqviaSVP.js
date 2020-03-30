@@ -4,10 +4,28 @@ export default class PocIqviaSVP extends LightningElement {
   @api title;
   @api icon = "standard:opportunity";
   @api classes = "";
+  @track typeVal;
+  @track milestoneVal;
   @track radioVal;
   @track regionVal;
   @track repeatVal;
   @track endVal;
+
+  get typeOpt() {
+    return [
+      { label: "First Subject Enrolled At Site", value: "firstSubject" },
+      { label: "Site Initiation Visit Date", value: "visitDate" },
+      { label: "Other", value: "number" },
+    ];
+}
+
+get milestoneOpt() {
+    return [
+      { label: "Metric", value: "none" },
+      { label: "Milestone", value: "date" },
+      { label: "Other", value: "number" },
+    ];
+}
 
   get radioOpt() {
     return [
@@ -31,7 +49,7 @@ export default class PocIqviaSVP extends LightningElement {
     ];
   }
 
-  get repeatOpt() {
+  get intervalOpt() {
     return [
       { label: "Days", value: "days" },
       { label: "Weeks", value: "weeks" },

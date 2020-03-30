@@ -11,9 +11,9 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
-            <property name="title" type="String" default="Example Component" label="Component Title"/>
+            <property name="title" type="String" default="Site Visit Planner" label="Component Title"/>
             <property name="classes" type="String" default=" " label="Enter CSS Classes"/>
-            <property name="icon" type="String" default="standard:opportunity" label="Component Icon"/>
+            <property name="icon" type="String" default="standard:date_input" label="Component Icon"/>
             <supportedFormFactors>
                 <supportedFormFactor type="Small" />
                 <supportedFormFactor type="Large" />

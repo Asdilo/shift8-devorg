@@ -1,20 +1,50 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api, track } from "lwc";
 
 export default class PocIqviaSVP extends LightningElement {
-    @api title;
-    @api icon = "standard:opportunity";
-    @api classes = "";
-    @track radioVal = '';
+  @api title;
+  @api icon = "standard:opportunity";
+  @api classes = "";
+  @track radioVal;
+  @track regionVal;
+  @track repeatVal;
+  @track endVal;
 
-    get radioOpt() {
-        return [
-            { label: 'Sun', value: 'sunday' },
-            { label: 'Mon', value: 'monday' },
-            { label: 'Tue', value: 'tuesday' },
-            { label: 'Wed', value: 'wednesday' },
-            { label: 'Thu', value: 'thursday' },
-            { label: 'Fri', value: 'friday' },
-            { label: 'Sat', value: 'saturday' },
-        ];
-    }
+  get radioOpt() {
+    return [
+      { label: "Sun", value: "sunday" },
+      { label: "Mon", value: "monday" },
+      { label: "Tue", value: "tuesday" },
+      { label: "Wed", value: "wednesday" },
+      { label: "Thu", value: "thursday" },
+      { label: "Fri", value: "friday" },
+      { label: "Sat", value: "saturday" }
+    ];
+  }
+
+  get regionOpt() {
+    return [
+      { label: "Global", value: "global" },
+      { label: "Country Alpha", value: "alpha" },
+      { label: "Country Bravo", value: "bravo" },
+      { label: "Region Charlie", value: "charlie" },
+      { label: "Region Delta", value: "delta" }
+    ];
+  }
+
+  get repeatOpt() {
+    return [
+      { label: "Days", value: "days" },
+      { label: "Weeks", value: "weeks" },
+      { label: "Months", value: "months" },
+      { label: "Years", value: "years" }
+    ];
+  }
+
+  get endOpt() {
+    return [
+      { label: "None (End of Study)", value: "none" },
+      { label: "On Specific Date", value: "date" },
+      { label: "After Number of Occurence", value: "number" }
+    ];
+  }
 }

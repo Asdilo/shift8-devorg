@@ -3,7 +3,6 @@ import { LightningElement, api, track } from "lwc";
 export default class PocIqviaSVP extends LightningElement {
   @api title;
   @api icon = "standard:opportunity";
-  @api classes = "";
   @api flexipageRegionWidth;
   @track typeVal;
   @track milestoneVal;
@@ -11,6 +10,10 @@ export default class PocIqviaSVP extends LightningElement {
   @track regionVal;
   @track repeatVal;
   @track endVal;
+  @track isMetric = false;
+  @track isMilestone = false;
+  @track isDate = false;
+  @track isNumber = false;
 
   get milestoneOpt() {
     return [
@@ -64,14 +67,35 @@ export default class PocIqviaSVP extends LightningElement {
   }
 
   handleChange(event) {
-    this.areDetailsVisible = event.target.checked;
-
     switch (event.target.value) {
-      case metric:
-        isMetric = true;
+      case "metric":
+        this.isMetric = true;
+        this.isMilestone = false;
         break;
-      case metric:
-        isMetric = true;
+
+      case "milestone":
+        this.isMetric = false;
+        this.isMilestone = true;
+        break;
+
+      case "date":
+        this.isDate = true;
+        this.isNumber = false;
+        break;
+
+      case "number":
+        this.isDate = false;
+        this.isNumber = true;
+        break;
+
+      case "other":
+        this.isMetric = false;
+        this.isMilestone = false;
+        break;
+
+      case "none":
+        this.isDate = false;
+        this.isNumber = false;
         break;
 
       default:

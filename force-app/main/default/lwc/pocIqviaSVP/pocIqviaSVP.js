@@ -4,38 +4,35 @@ export default class PocIqviaSVP extends LightningElement {
   @api title;
   @api icon = "standard:opportunity";
   @api classes = "";
+  @api flexipageRegionWidth;
   @track typeVal;
   @track milestoneVal;
-  @track radioVal;
+  @track metricVal = false;
   @track regionVal;
   @track repeatVal;
   @track endVal;
 
+  get milestoneOpt() {
+    return [
+      { label: "First Subject Enrolled", value: "firstSubject" },
+      { label: "Site Initiation Visit Date", value: "visitDate" },
+      { label: "Other", value: "number" }
+    ];
+  }
+
+  get metricOpt() {
+    return [
+      { label: "Subjects Enrolled", value: "subjectEnrolled" },
+      { label: "Subjects Withdrawn", value: "subjectWithdrawn" },
+      { label: "Screen Failures", value: "screen" }
+    ];
+  }
+
   get typeOpt() {
     return [
-      { label: "First Subject Enrolled At Site", value: "firstSubject" },
-      { label: "Site Initiation Visit Date", value: "visitDate" },
-      { label: "Other", value: "number" },
-    ];
-}
-
-get milestoneOpt() {
-    return [
-      { label: "Metric", value: "none" },
-      { label: "Milestone", value: "date" },
-      { label: "Other", value: "number" },
-    ];
-}
-
-  get radioOpt() {
-    return [
-      { label: "Sun", value: "sunday" },
-      { label: "Mon", value: "monday" },
-      { label: "Tue", value: "tuesday" },
-      { label: "Wed", value: "wednesday" },
-      { label: "Thu", value: "thursday" },
-      { label: "Fri", value: "friday" },
-      { label: "Sat", value: "saturday" }
+      { label: "Metric", value: "metric" },
+      { label: "Milestone", value: "milestone" },
+      { label: "Other", value: "other" }
     ];
   }
 
@@ -64,5 +61,21 @@ get milestoneOpt() {
       { label: "On Specific Date", value: "date" },
       { label: "After Number of Occurence", value: "number" }
     ];
+  }
+
+  handleChange(event) {
+    this.areDetailsVisible = event.target.checked;
+
+    switch (event.target.value) {
+      case metric:
+        isMetric = true;
+        break;
+      case metric:
+        isMetric = true;
+        break;
+
+      default:
+        break;
+    }
   }
 }

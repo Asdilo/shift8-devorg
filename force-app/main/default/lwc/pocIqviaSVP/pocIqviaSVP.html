@@ -5,58 +5,94 @@
                 <lightning-icon icon-name={icon} size="small" class="slds-var-m-right_small"></lightning-icon>
                 <strong class="slds-text-heading_small">{title}</strong>
             </h2>
-            <div slot="actions">
-
-
-            </div>
             <div class="slds-var-p-around_small">
                 <div class="slds-box slds-theme_shade slds-var-m-bottom_medium">
                     <h4 class="slds-text-heading_small slds-var-m-bottom_small">Visit Plan Trigger</h4>
-                    <div>
-                        <lightning-combobox name="triggerType" label="Trigger Type" value={typeVal}
-                            placeholder="Select Type" options={typeOpt}></lightning-combobox>
-
-                        <lightning-combobox name="region" label="Region or Country" value={regionVal}
-                            placeholder="Select Region" options={regionOpt}></lightning-combobox>
+                    <div class="slds-grid slds-gutters slds-grid_vertical-align-end">
+                        <div class="slds-col">
+                            <lightning-combobox name="triggerType" label="Trigger Type" value={typeVal}
+                                placeholder="Select Type" options={typeOpt}></lightning-combobox>
+                        </div>
+                        <div class="slds-col">
+                            <lightning-combobox name="region" label="Region or Country" value={regionVal}
+                                placeholder="Select Region" options={regionOpt}></lightning-combobox>
+                        </div>
                     </div>
 
+                    <div class="slds-grid slds-gutters_x-small slds-grid_vertical-align-end slds-var-m-bottom_medium">
+                        <div class="slds-col slds-size_3-of-12 slds-text-title_bold slds-text-align_right">
+                            Site Visit Plan is triggered:
+                        </div>
+                        <div class="slds-col slds slds-size_1-of-12">
+                            <lightning-input type="number" name="milestoneNumber" value="1" min="1">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_2-of-12">
+                            <lightning-combobox name="milestoneInterval" value={mileNumVal}
+                                placeholder="Select Interval" options={intervalOpt}></lightning-combobox>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12 slds-text-title_bold slds-text-align_right">
+                            After the milestone:
+                        </div>
+                        <div class="slds-col slds-size_3-of-12">
+                            <lightning-combobox name="milestone" value={milestoneVal} placeholder="Select Milestone"
+                                options={milestoneOpt}></lightning-combobox>
+                        </div>
+                    </div>
 
-                    <div>Milestone
-                        <lightning-input type="number" name="milestoneNumber" required value="1" min="1" max="99">
+                    <div class="slds-grid slds-gutters slds-grid_vertical-align-end slds-var-m-bottom_medium">
+                        <div class="slds-col slds-size_4-of-12 slds-text-title_bold slds-text-align_right">
+                            Site Visit Plan is triggered after:
+                        </div>
+                        <div class="slds-col slds slds-size_1-of-12">
+                            <lightning-input type="number" name="metricNumber" value="1" min="1">
+                            </lightning-input>
+                        </div>
+                        <div class="slds-col slds-size_3-of-12">
+                            <lightning-combobox name="metric" value={metricVal} placeholder="Select Metric"
+                                options={metricOpt}></lightning-combobox>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slds-var-p-around_small">
+                <h4 class="slds-text-heading_small slds-var-m-bottom_small">Visit Plan Recurrence</h4>
+                <div class="slds-grid slds-gutters slds-grid_vertical-align-end slds-var-m-bottom_medium">
+                    <div class="slds-col slds-size_4-of-12 slds-text-title_bold slds-text-align_right">
+                        This Site Visit Plan repeats every:
+                    </div>
+                    <div class="slds-col slds-size_1-of-12">
+                        <lightning-input type="number" name="repeatNumber" value="1" min="1">
                         </lightning-input>
-                        <lightning-combobox name="milestoneInterval" value={mileNumVal} placeholder="Select Interval"
-                        options={intervalOpt}></lightning-combobox>
-                        <lightning-combobox name="milestone" label="Milestone Type" value={milestoneVal}
-                        placeholder="Select Milestone" options={milestoneOpt}></lightning-combobox>
-                        {milestoneVal}
+                    </div>
+                    <div class="slds-col slds-size_4-of-12">
+                        <lightning-combobox name="repeatEvery" value={repeatVal} placeholder="Select Interval" options={intervalOpt}>
+                        </lightning-combobox>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-gutters slds-grid_vertical-align-end slds-var-m-bottom_medium">
+                    <div class="slds-col slds-size_4-of-12 slds-text-title_bold slds-text-align_right">
+                        This Site Visit Plan ends
+                    </div>
+                    <div class="slds-col slds-size_4-of-12">
+                        <lightning-combobox name="occurenceEnds" placeholder="Select End Type" options={endOpt}
+                            value={endVal}></lightning-combobox>
                     </div>
 
-                    <div>Metric
-
+                    <div class="slds-col slds-size_4-of-12">
+                        <lightning-input type="date" name="endDate" placeholder="Select End Date"></lightning-input>
                     </div>
-
+                    <template if:true={endVal}>
+                    <div class="slds-col slds-size_1-of-12">
+                        <lightning-input type="number" name="endNumber" placeholder="#" value="5" min="1" >
+                        </lightning-input>
+                    </div>
+                    </template>
                 </div>
-                <div class="">
-                    <h4 class="slds-text-heading_small slds-var-m-bottom_small">Visit Plan Recurrence</h4>
-                    This Site Visit Plan repeats every
-                    <lightning-input type="number" name="repeatNumber" required value="1" min="1" max="99">
-                    </lightning-input>
-                    <lightning-combobox name="repeatEvery" value={repeatVal} placeholder="Select Interval"
-                        options={intervalOpt}></lightning-combobox>
-                    <lightning-radio-group name="repeatOn" label="Repeat On" options={radioOpt} value={radioVal}
-                        type="button"></lightning-radio-group>
 
-                    This Site Visit Plan ends
-                    <lightning-radio-group name="radioEnds" label="This Site Visit Plan Ends" options={endOpt}
-                        value={endVal} required type="radio"></lightning-radio-group>
-
-                    <lightning-input type="date" name="endDate" required label="End Date"></lightning-input>
-
-                    <lightning-input type="number" name="endNumber" required label="Number of Occurences" value="5"
-                        min="1" max="99">
-                    </lightning-input>
-
-                </div>
             </div>
             <div slot="footer">
                 <lightning-input type="checkbox" label="Basic option" name="input1"></lightning-input>

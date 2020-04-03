@@ -39,6 +39,14 @@ export default class PocIqviaSVP extends LightningElement {
     ];
   }
 
+  get kindOpt() {
+    return [
+      { label: "Remote", value: "remote" },
+      { label: "Onsite", value: "onsite" },
+      { label: "Other", value: "other" }
+    ];
+  }
+
   get regionOpt() {
     return [
       { label: "Global", value: "global" },

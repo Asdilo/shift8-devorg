@@ -1,0 +1,6 @@
+<aura:component
+    implements="force:hasRecordId,force:lightningQuickActionWithoutHeader, lightning:actionOverride,flexipage:availableForRecordHome,force:hasSObjectName"
+    access="global">
+    <!-- Add custom component below -->
+    <c:pocIqviaSVP />
+</aura:component>

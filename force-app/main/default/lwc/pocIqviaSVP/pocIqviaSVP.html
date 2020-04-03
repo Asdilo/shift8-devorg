@@ -13,6 +13,20 @@
                 </lightning-button>
             </div>
             <div class="slds-var-p-around_medium">
+                <h4 class="slds-text-heading_small slds-var-m-bottom_small slds-border_bottom">Visit Plan Options</h4>
+                <div class="slds-grid slds-gutters slds-grid_vertical-align-end slds-var-m-bottom_medium">
+                    <div class="slds-col slds-grow-none slds-text-title_bold slds-text-align_right">
+                        Create a name and select type of visit:
+                    </div>
+                        <div class="slds-col slds-grow-none">
+                            <lightning-input type="text" name="planName" placeholder="Enter Plan Name"></lightning-input>
+                        </div>
+                    <div class="slds-col slds-grow-none">
+                        <lightning-combobox name="visitKind" value={kindVal} placeholder="Select Visit Type"
+                            options={kindOpt}>
+                        </lightning-combobox>
+                    </div>
+                </div>
                 <div class="slds-box slds-theme_shade slds-var-m-bottom_medium">
                     <h4 class="slds-text-heading_small slds-var-m-bottom_small slds-border_bottom">Visit Plan Trigger</h4>
                     <div class="slds-grid slds-gutters slds-grid_vertical-align-end slds-var-m-bottom_medium">
@@ -20,7 +34,7 @@
                             <lightning-input type="text" name="planName" placeholder="Enter Plan Name"></lightning-input>
                         </div> -->
                         <div class="slds-col slds-grow-none">
-                            <lightning-combobox name="triggerType" value={typeVal} placeholder="Select Type"
+                            <lightning-combobox name="triggerType" value={typeVal} placeholder="Select Trigger Type"
                                 options={typeOpt} onchange={handleChange}>
                             </lightning-combobox>
                         </div>

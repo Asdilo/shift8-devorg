@@ -1,0 +1,10 @@
+<template>
+    <lightning-card>
+        <h2 slot="title">
+            <lightning-icon icon-name={icon} size="small" class="slds-var-m-right_small"></lightning-icon>
+            <strong class="slds-text-heading_small">{title} ({recordNum})</strong>
+        </h2>
+        <div slot="actions"></div>
+        <lightning-tree-grid columns={svtColumns} data={svtData} key-field="subjectId"></lightning-tree-grid>
+    </lightning-card>
+</template>

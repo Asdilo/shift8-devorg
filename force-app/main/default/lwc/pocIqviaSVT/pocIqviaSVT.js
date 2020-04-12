@@ -181,4 +181,13 @@ export default class PocIqviaSVT extends LightningElement {
   @track svtColumns = columns;
   @track svtData = data;
   @track activeSections;
+  @track value;
+
+  get options() {
+    return [
+        { label: 'All', value: 'new' },
+        { label: 'Some', value: 'some' },
+        { label: 'None', value: 'none' },
+    ];
+}
 }

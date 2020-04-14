@@ -1,6 +1,7 @@
 import { LightningElement, api, track } from "lwc";
 //import {data} from 'c/pocIqviaSVT';
 
+//Array of name and values for the datatable actions column
 const actions = [
   { label: "Verify Item", name: "verifyItem" },
   { label: "New Action Item", name: "newAction" },
@@ -8,6 +9,7 @@ const actions = [
   { label: "Delete", name: "delete" }
 ];
 
+//Column config for the data tables within accordions
 const columns = [
   {
     type: "text",
@@ -15,7 +17,7 @@ const columns = [
     label: "Verification Item",
   },
   {
-    type: "text",
+    type: "boolean",
     fieldName: "completed",
     label: "Completion Status"
   },
@@ -25,410 +27,25 @@ const columns = [
   }
 ];
 
-const data = [{
-  "subjectId": 6341,
-  "status": "Discontinued",
-  "label": "6341 - Discontinued",
-  "visit": [
-    {
-      "date": "05/11/2019",
-      "verification": [
-        {
-          "items": "Physical Exam Documentation",
-          "completed": false
-        },
-        {
-          "items": "Vision Test",
-          "completed": true
-        },
-        {
-          "items": "Laboratory Results",
-          "completed": true
-        },
-        {
-          "items": "X-Rays",
-          "completed": false
-        },
-        {
-          "items": "Laboratory Results",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "date": "07/22/2019",
-      "verification": [
-        {
-          "items": "Laboratory Results",
-          "completed": false
-        },
-        {
-          "items": "Informed Consent",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "date": "02/18/2020",
-      "verification": [
-        {
-          "items": "Physical Exam Documentation",
-          "completed": true
-        },
-        {
-          "items": "Physical Exam Documentation",
-          "completed": true
-        },
-        {
-          "items": "Laboratory Results",
-          "completed": true
-        },
-        {
-          "items": "Hearing Test",
-          "completed": false
-        },
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "date": "07/11/2019",
-      "verification": [
-        {
-          "items": "Endoscopy",
-          "completed": false
-        },
-        {
-          "items": "Vision Test",
-          "completed": true
-        },
-        {
-          "items": "EKG (Electrocardiogram)",
-          "completed": true
-        },
-        {
-          "items": "Vision Test",
-          "completed": false
-        }
-      ]
-    }
-  ]
-}, {
-  "subjectId": 6854,
-  "status": "Completed",
-  "label": "6854 - Completed",
-  "visit": [
-    {
-      "date": "12/12/2019",
-      "verification": [
-        {
-          "items": "Laboratory Results",
-          "completed": true
-        },
-        {
-          "items": "Informed Consent",
-          "completed": true
-        }
-      ]
-    },
-    {
-      "date": "11/30/2019",
-      "verification": [
-        {
-          "items": "X-Rays",
-          "completed": false
-        },
-        {
-          "items": "X-Rays",
-          "completed": true
-        },
-        {
-          "items": "PFT (Pulmonary Function Test)",
-          "completed": true
-        },
-        {
-          "items": "Vision Test",
-          "completed": true
-        },
-        {
-          "items": "CT(Computed Tomography)",
-          "completed": false
-        },
-        {
-          "items": "PFT (Pulmonary Function Test)",
-          "completed": false
-        },
-        {
-          "items": "Physical Exam Documentation",
-          "completed": false
-        },
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": true
-        },
-        {
-          "items": "Vitals",
-          "completed": false
-        },
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": true
-        }
-      ]
-    }
-  ]
-}, {
-  "subjectId": 1664,
-  "status": "Screened",
-  "label": "1664 - Screened",
-  "visit": [
-    {
-      "date": "05/27/2019",
-      "verification": [
-        {
-          "items": "Vision Test",
-          "completed": true
-        },
-        {
-          "items": "PFT (Pulmonary Function Test)",
-          "completed": false
-        },
-        {
-          "items": "Informed Consent",
-          "completed": false
-        },
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": false
-        },
-        {
-          "items": "X-Rays",
-          "completed": false
-        },
-        {
-          "items": "Endoscopy",
-          "completed": false
-        },
-        {
-          "items": "Vitals",
-          "completed": false
-        },
-        {
-          "items": "Hearing Test",
-          "completed": false
-        },
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": false
-        },
-        {
-          "items": "Informed Consent",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "date": "03/09/2020",
-      "verification": [
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": true
-        },
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": true
-        },
-        {
-          "items": "CT(Computed Tomography)",
-          "completed": false
-        },
-        {
-          "items": "Hearing Test",
-          "completed": true
-        },
-        {
-          "items": "Endoscopy",
-          "completed": true
-        },
-        {
-          "items": "PFT (Pulmonary Function Test)",
-          "completed": false
-        }
-      ]
-    }
-  ]
-}, {
-  "subjectId": 2654,
-  "status": "Completed",
-  "label": "2654 - Completed",
-  "visit": [
-    {
-      "date": "09/01/2019",
-      "verification": [
-        {
-          "items": "X-Rays",
-          "completed": true
-        },
-        {
-          "items": "Vitals",
-          "completed": false
-        },
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": true
-        }
-      ]
-    },
-    {
-      "date": "05/10/2019",
-      "verification": [
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": true
-        },
-        {
-          "items": "Endoscopy",
-          "completed": false
-        },
-        {
-          "items": "Informed Consent",
-          "completed": true
-        },
-        {
-          "items": "Physical Exam Documentation",
-          "completed": false
-        },
-        {
-          "items": "X-Rays",
-          "completed": true
-        },
-        {
-          "items": "Physical Exam Documentation",
-          "completed": true
-        },
-        {
-          "items": "Vision Test",
-          "completed": true
-        },
-        {
-          "items": "PFT (Pulmonary Function Test)",
-          "completed": false
-        },
-        {
-          "items": "X-Rays",
-          "completed": true
-        }
-      ]
-    },
-    {
-      "date": "12/19/2019",
-      "verification": [
-        {
-          "items": "Laboratory Results",
-          "completed": false
-        },
-        {
-          "items": "X-Rays",
-          "completed": true
-        },
-        {
-          "items": "Vision Test",
-          "completed": true
-        },
-        {
-          "items": "Hearing Test",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "date": "09/28/2019",
-      "verification": [
-        {
-          "items": "Vitals",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "date": "02/03/2020",
-      "verification": [
-        {
-          "items": "Endoscopy",
-          "completed": true
-        }
-      ]
-    }
-  ]
-}, {
-  "subjectId": 9069,
-  "status": "Discontinued",
-  "label": "9069 - Discontinued",
-  "visit": [
-    {
-      "date": "05/20/2019",
-      "verification": [
-        {
-          "items": "Informed Consent",
-          "completed": false
-        },
-        {
-          "items": "Informed Consent",
-          "completed": false
-        },
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": false
-        },
-        {
-          "items": "EEG (Electroencephalogram)",
-          "completed": false
-        }
-      ]
-    },
-    {
-      "date": "09/15/2019",
-      "verification": [
-        {
-          "items": "Hearing Test",
-          "completed": false
-        },
-        {
-          "items": "Endoscopy",
-          "completed": false
-        },
-        {
-          "items": "Laboratory Results",
-          "completed": false
-        },
-        {
-          "items": "EKG (Electrocardiogram)",
-          "completed": true
-        },
-        {
-          "items": "Laboratory Results",
-          "completed": false
-        }
-      ]
-    }
-  ]
-}];
+//Big ol minified array of fake data below
+const data=[{"subjectId":5182,"status":"Discontinued","label":"5182 Discontinued - N Item(s) Need Verification","visit":[{"date":"11/15/2019","verification":[{"items":"EEG (Electroencephalogram)","completed":false},{"items":"EKG (Electrocardiogram)","completed":true},{"items":"EEG (Electroencephalogram)","completed":true},{"items":"CT(Computed Tomography)","completed":false},{"items":"Laboratory Results","completed":false},{"items":"Vision Test","completed":true},{"items":"CT(Computed Tomography)","completed":true}]},{"date":"03/10/2020","verification":[{"items":"Physical Exam Documentation","completed":true},{"items":"Vitals","completed":false},{"items":"CT(Computed Tomography)","completed":false},{"items":"PFT (Pulmonary Function Test)","completed":true},{"items":"Vision Test","completed":true},{"items":"PFT (Pulmonary Function Test)","completed":false},{"items":"Vision Test","completed":false},{"items":"Laboratory Results","completed":false},{"items":"Laboratory Results","completed":true}]},{"date":"01/07/2020","verification":[{"items":"PFT (Pulmonary Function Test)","completed":true},{"items":"Physical Exam Documentation","completed":true},{"items":"Endoscopy","completed":true},{"items":"Endoscopy","completed":false},{"items":"CT(Computed Tomography)","completed":false},{"items":"CT(Computed Tomography)","completed":true},{"items":"EEG (Electroencephalogram)","completed":false},{"items":"Endoscopy","completed":false}]}]},{"subjectId":4366,"status":"Completed","label":"4366 Completed - N Item(s) Need Verification","visit":[{"date":"04/28/2019","verification":[{"items":"Laboratory Results","completed":false},{"items":"EKG (Electrocardiogram)","completed":true},{"items":"X-Rays","completed":false}]}]},{"subjectId":2523,"status":"Failed","label":"2523 Failed - N Item(s) Need Verification","visit":[{"date":"10/26/2019","verification":[{"items":"PFT (Pulmonary Function Test)","completed":true},{"items":"Laboratory Results","completed":true},{"items":"X-Rays","completed":false}]},{"date":"12/11/2019","verification":[{"items":"EEG (Electroencephalogram)","completed":true},{"items":"Informed Consent","completed":false},{"items":"Vision Test","completed":false},{"items":"Laboratory Results","completed":true}]},{"date":"01/19/2020","verification":[{"items":"Physical Exam Documentation","completed":true},{"items":"CT(Computed Tomography)","completed":false},{"items":"Hearing Test","completed":true},{"items":"Laboratory Results","completed":true},{"items":"PFT (Pulmonary Function Test)","completed":false},{"items":"Endoscopy","completed":true},{"items":"Vision Test","completed":false}]},{"date":"09/25/2019","verification":[{"items":"Vision Test","completed":false}]},{"date":"12/01/2019","verification":[{"items":"Informed Consent","completed":false},{"items":"Physical Exam Documentation","completed":false},{"items":"Hearing Test","completed":true},{"items":"Vitals","completed":true},{"items":"EKG (Electrocardiogram)","completed":false},{"items":"Endoscopy","completed":true}]}]},{"subjectId":8371,"status":"Completed","label":"8371 Completed - N Item(s) Need Verification","visit":[{"date":"04/07/2020","verification":[{"items":"Physical Exam Documentation","completed":false},{"items":"Laboratory Results","completed":false},{"items":"Hearing Test","completed":true},{"items":"Physical Exam Documentation","completed":false},{"items":"X-Rays","completed":true}]},{"date":"08/18/2019","verification":[{"items":"Vitals","completed":false},{"items":"Vitals","completed":false},{"items":"PFT (Pulmonary Function Test)","completed":true}]}]},{"subjectId":4119,"status":"Completed","label":"4119 Completed - N Item(s) Need Verification","visit":[{"date":"07/15/2019","verification":[{"items":"X-Rays","completed":true},{"items":"PFT (Pulmonary Function Test)","completed":true},{"items":"EEG (Electroencephalogram)","completed":false},{"items":"EEG (Electroencephalogram)","completed":true},{"items":"EEG (Electroencephalogram)","completed":true}]},{"date":"06/04/2019","verification":[{"items":"EEG (Electroencephalogram)","completed":false},{"items":"Vision Test","completed":false},{"items":"CT(Computed Tomography)","completed":true},{"items":"Vitals","completed":false},{"items":"PFT (Pulmonary Function Test)","completed":true},{"items":"EEG (Electroencephalogram)","completed":true},{"items":"Hearing Test","completed":false},{"items":"PFT (Pulmonary Function Test)","completed":false},{"items":"Vision Test","completed":false},{"items":"EKG (Electrocardiogram)","completed":false}]},{"date":"08/22/2019","verification":[{"items":"Vision Test","completed":false},{"items":"Hearing Test","completed":false},{"items":"PFT (Pulmonary Function Test)","completed":true},{"items":"X-Rays","completed":false}]},{"date":"07/22/2019","verification":[{"items":"Laboratory Results","completed":true},{"items":"Physical Exam Documentation","completed":false},{"items":"Laboratory Results","completed":true},{"items":"CT(Computed Tomography)","completed":false},{"items":"X-Rays","completed":true}]},{"date":"02/21/2020","verification":[{"items":"PFT (Pulmonary Function Test)","completed":true},{"items":"Physical Exam Documentation","completed":false},{"items":"Laboratory Results","completed":false},{"items":"EKG (Electrocardiogram)","completed":false},{"items":"Informed Consent","completed":false},{"items":"Hearing Test","completed":false},{"items":"Vision Test","completed":true}]}]}];
 
 
 export default class PocIqviaSVT extends LightningElement {
+  //Icon and title can be changed by admin user in app builder
   @api title;
   @api icon = "standard:user";
-  @api flexipageRegionWidth;
+  @api flexipageRegionWidth; //only here in case we would want to leverage some responsive behaviors on flexipages
   @track recordNum = data.length;
   @track svtColumns = columns;
   @track svtData = data;
+  //These arrays simply track which accordions are open. Just in case it is needed
   @track activeSubjects = [];
   @track activeVisits = [];
 
   @track value;
 
+  //Options for the filter combobox at the top of the component
   get options() {
     return [
         { label: 'All', value: 'new' },

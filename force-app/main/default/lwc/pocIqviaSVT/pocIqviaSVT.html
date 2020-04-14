@@ -10,21 +10,17 @@
             </lightning-combobox>
             <lightning-input name="search" placeholder="Search Subjects" type="search"></lightning-input>
         </div>
+        
         <lightning-accordion allow-multiple-sections-open active-section-name={activeSubjects}>
             <lightning-accordion-section name="A" label="Accordion Title A">
-                <lightning-accordion allow-multiple-sections-open active-section-name={activeVisits}>
+                <lightning-accordion class="slds-theme_shade slds-border_bottom" allow-multiple-sections-open active-section-name={activeVisits}>
                     <lightning-accordion-section name="B" label="Accordion Title B">
-
                         <lightning-datatable key-field="subjectID" data={svtData} columns={svtColumns}
                             hide-checkbox-column>
                         </lightning-datatable>
-
                     </lightning-accordion-section>
-
                 </lightning-accordion>
-
             </lightning-accordion-section>
-
         </lightning-accordion>
 
     </lightning-card>

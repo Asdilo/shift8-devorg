@@ -1,36 +1,6 @@
-import { LightningElement, api, track } from "lwc";
-//import {data} from 'c/pocIqviaSVT';
+//export {data};
 
-const actions = [
-  { label: "Verify Item", name: "verifyItem" },
-  { label: "New Action Item", name: "newAction" },
-  { label: "New Protocol Deviation", name: "newProtocol" },
-  { label: "Delete", name: "delete" }
-];
-
-const columns = [
-  {
-    type: "number",
-    fieldName: "subjectId",
-    label: "Subject ID",
-  },
-  {
-    type: "text",
-    fieldName: "status",
-    label: "Status"
-  },
-  {
-    type: "date",
-    fieldName: "visit",
-    label: "Visit"
-  },
-  {
-    type: "action",
-    typeAttributes: { rowActions: actions }
-  }
-];
-
-const data = [{
+var data = [{
     "subjectId": 6001,
     "status": "Randomized",
     "visit": [
@@ -188,25 +158,3 @@ const data = [{
       }
     ]
   }];
-
-
-export default class PocIqviaSVT extends LightningElement {
-  @api title;
-  @api icon = "standard:user";
-  @api flexipageRegionWidth;
-  @track recordNum = 4;
-  @track svtColumns = columns;
-  @track svtData = data;
-  @track activeSubjects = [];
-  @track activeVisits = [];
-
-  @track value;
-
-  get options() {
-    return [
-        { label: 'All', value: 'new' },
-        { label: 'Some', value: 'some' },
-        { label: 'None', value: 'none' },
-    ];
-}
-}

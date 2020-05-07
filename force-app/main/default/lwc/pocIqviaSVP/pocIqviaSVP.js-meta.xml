@@ -3,7 +3,7 @@
     <apiVersion>48.0</apiVersion>
     <isExposed>true</isExposed>
     <masterLabel>IQVIA - Site Visit Plan POC</masterLabel>
-    <description>This custom component is a proof of concept and UI for the site visit plan user UI/user flow.</description>
+    <description>This custom component is a proof of concept and UI for the site visit planner.</description>
     <targets>
         <target>lightning__AppPage</target>
         <target>lightning__RecordPage</target>

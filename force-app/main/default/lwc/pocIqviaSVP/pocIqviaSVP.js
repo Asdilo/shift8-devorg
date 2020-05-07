@@ -15,6 +15,7 @@ export default class PocIqviaSVP extends LightningElement {
   @track isDate = false;
   @track isNumber = false;
 
+  //All these getters below are simply to handle UI state and labels/values for inputs
   get milestoneOpt() {
     return [
       { label: "First Subject Enrolled", value: "firstSubject" },
@@ -74,6 +75,7 @@ export default class PocIqviaSVP extends LightningElement {
     ];
   }
 
+  //Simple UI logic to handle if certain UI elmements will be shown or be hidden based on boolean values
   handleChange(event) {
     switch (event.target.value) {
       case "metric":

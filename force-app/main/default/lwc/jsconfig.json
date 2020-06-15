@@ -41,6 +41,9 @@
             ],
             "c/pocIqviaSVT": [
                 "pocIqviaSVT/pocIqviaSVT.js"
+            ],
+            "c/dataHighlights": [
+                "dataHighlights/dataHighlights.js"
             ]
         }
     },

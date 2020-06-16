@@ -1,13 +1,13 @@
 <template>
   <lightning-card>
     <h2 slot="title">
-      <lightning-icon src={customIcon} size="small" class="slds-m-right_small"></lightning-icon>
+      <lightning-icon src={customIcon} size="small" class="slds-var-m-right_small"></lightning-icon>
       <strong class="slds-text-heading_small">{title}</strong>
     </h2>
     <div class="slds-p-horizontal_medium tile-grid slds-scrollable_y">
       <template for:each={results} for:item="result">
-        <article key={result.uniqueId} class="slds-border_bottom slds-p-bottom_x-small">
-          <h3 class="slds-tile__title slds-truncate" title={result.experimentName}>
+        <article key={result.uniqueId} class="slds-border_bottom slds-var-p-bottom_x-small">
+          <h3 class=" slds-truncate" title={result.experimentName}>
             <a href={result.experimentLink} target="_blank">{result.experimentName}</a>
             <span class="slds-float_right slds-text-color_weak">
               <lightning-formatted-date-time value={result.dateTime} year="numeric" month="numeric" day="numeric"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>48.0</apiVersion>
-    <isExposed>true</isExposed>
+    <isExposed>false</isExposed>
     <masterLabel>IQVIA - Site Visit Tracking POC</masterLabel>
     <description>As a CRA I need to see my Subject Visit Tracking Component on Site Visit Report so that I can see what items I need to verify while doing a Site Visit</description>
     <targets>

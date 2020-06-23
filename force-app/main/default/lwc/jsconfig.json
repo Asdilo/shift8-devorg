@@ -44,6 +44,9 @@
             ],
             "c/dataHighlights": [
                 "dataHighlights/dataHighlights.js"
+            ],
+            "c/pocTreeGrid": [
+                "pocTreeGrid/pocTreeGrid.js"
             ]
         }
     },

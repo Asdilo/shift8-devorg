@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>48.0</apiVersion>
-    <isExposed>false</isExposed>
-    <masterLabel>IQVIA - Site Visit Tracking POC</masterLabel>
-    <description>As a CRA I need to see my Subject Visit Tracking Component on Site Visit Report so that I can see what items I need to verify while doing a Site Visit</description>
+    <isExposed>true</isExposed>
+    <masterLabel>POC - Tree Grid</masterLabel>
+    <description>LWC proof of concept that combines a Tree grid and card</description>
     <targets>
         <target>lightning__AppPage</target>
         <target>lightning__RecordPage</target>
@@ -11,12 +11,12 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
-            <property name="title" type="String" default="Site Visit Planner" label="Component Title"/>
-            <property name="icon" type="String" default="standard:user" label="Component Icon"/>
+            <property name="title" type="String" default="Propogate ORI" label="Component Title"/>
+            <property name="icon" type="String" default="standard:activations" label="Component Icon"/>
             <supportedFormFactors>
                 <supportedFormFactor type="Small" />
                 <supportedFormFactor type="Large" />
             </supportedFormFactors>
         </targetConfig>
-    </targetConfigs
-    ></LightningComponentBundle>
+    </targetConfigs>
+</LightningComponentBundle>

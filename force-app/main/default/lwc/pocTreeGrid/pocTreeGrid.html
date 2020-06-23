@@ -1,0 +1,17 @@
+<template>
+    <lightning-card>
+        <h2 slot="title">
+            <lightning-icon icon-name={icon} size="small" class="slds-var-m-right_small"></lightning-icon>
+            <strong class="slds-text-heading_small">{title}</strong>
+        </h2>
+        <div class="slds-grid" slot="actions">
+            <lightning-button variant="brand-outline" label="Cancel" title="Cancel"  class="slds-var-m-left_x-small"></lightning-button>
+            <lightning-button variant="brand" label="Propogate" title="Propogate ORI"  class="slds-var-m-left_x-small"></lightning-button>
+        </div>
+        <lightning-tree-grid
+        columns={gridColumns}
+        data={gridData}
+        key-field="name"
+    ></lightning-tree-grid>
+    </lightning-card>
+</template>

@@ -18,7 +18,36 @@ const columns = [
         fieldName: 'numSubjects',
         label: 'Subjects',
         sortable: true,
+        initialWidth: 100,
     },
+];
+
+const columns2 = [
+  {
+      type: 'text',
+      fieldName: 'countrySite',
+      label: 'Site',
+      sortable: true,
+  },
+  {
+      type: 'phone',
+      fieldName: 'phone',
+      label: 'Phone Number',
+      sortable: true,
+  },
+  {
+    type: 'text',
+    fieldName: 'status',
+    label: 'Site Status',
+    sortable: true,
+},
+  {
+      type: 'number',
+      fieldName: 'numSubjects',
+      label: 'Subjects',
+      sortable: true,
+      initialWidth: 100,
+  },
 ]; 
 
 const  data = [{
@@ -1616,8 +1645,9 @@ const  data = [{
 export default class PocTreeGrid extends LightningElement {
       //Icon and title can be changed by admin user in app builder
   @api title;
-  @api icon = "standard:activations";
+  @api icon = "standard:accounts";
   @api flexipageRegionWidth; //only here in case we would want to leverage some responsive behaviors on flexipages
   @track gridColumns = columns;
+  @track tableColumns = columns2;
   @track gridData = data;
 }

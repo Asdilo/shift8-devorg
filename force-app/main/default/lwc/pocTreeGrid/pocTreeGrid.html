@@ -5,13 +5,31 @@
             <strong class="slds-text-heading_small">{title}</strong>
         </h2>
         <div class="slds-grid" slot="actions">
-            <lightning-button variant="brand-outline" label="Cancel" title="Cancel"  class="slds-var-m-left_x-small"></lightning-button>
-            <lightning-button variant="brand" label="Propogate" title="Propogate ORI"  class="slds-var-m-left_x-small"></lightning-button>
+            <lightning-button variant="brand-outline" label="Cancel" title="Cancel" class="slds-var-m-left_x-small">
+            </lightning-button>
+            <lightning-button variant="brand" label="Propogate" title="Propogate ORI" class="slds-var-m-left_x-small">
+            </lightning-button>
         </div>
-        <lightning-tree-grid
-        columns={gridColumns}
-        data={gridData}
-        key-field="countrySite"
-    ></lightning-tree-grid>
+        <div class="slds-scrollable_y custom-height">
+            <lightning-tree-grid columns={gridColumns} data={gridData} key-field="countrySite">
+            </lightning-tree-grid>
+        </div>
     </lightning-card>
+    <template for:each={gridData} for:item="data">
+        <lightning-accordion class="slds-box slds-box_xx-small slds-var-m-around_medium" key={data.countrySite}
+            allow-multiple-sections-open>
+            <lightning-accordion-section name={data.countrySite} label={data.countrySite}>
+                <div slot="actions">
+                    <lightning-button label="Button" title="Button" class="slds-var-m-left_x-small">
+                    </lightning-button>
+                </div>
+                <lightning-datatable key-field="data._children" data={data._children} columns={tableColumns}>
+                </lightning-datatable>
+                <div class="slds-var-m-vertical_small">
+                    <lightning-button label="Button" title="Button" class="slds-var-m-left_x-small">
+                    </lightning-button>
+                </div>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </template>
 </template>

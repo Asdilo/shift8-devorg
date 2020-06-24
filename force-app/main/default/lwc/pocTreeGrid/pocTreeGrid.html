@@ -2,34 +2,33 @@
     <lightning-card>
         <h2 slot="title">
             <lightning-icon icon-name={icon} size="small" class="slds-var-m-right_small"></lightning-icon>
-            <strong class="slds-text-heading_small">{title}</strong>
+            <strong class="slds-text-heading_small">{title} - Countries (N/N) | Sites (N/N)</strong>
         </h2>
         <div class="slds-grid" slot="actions">
-            <lightning-button variant="brand-outline" label="Cancel" title="Cancel" class="slds-var-m-left_x-small">
+            <lightning-button variant="brand-outline" label="Select All" title="Select All Countries and Sites" class="slds-var-m-left_x-small">
             </lightning-button>
             <lightning-button variant="brand" label="Propogate" title="Propogate ORI" class="slds-var-m-left_x-small">
             </lightning-button>
         </div>
-        <div class="slds-scrollable_y custom-height">
-            <lightning-tree-grid columns={gridColumns} data={gridData} key-field="countrySite">
+        <div class="slds-scrollable_y custom-height slds-border_top">
+            <lightning-tree-grid columns={gridColumns} data={gridData} key-field="phone">
             </lightning-tree-grid>
         </div>
     </lightning-card>
-    <template for:each={gridData} for:item="data">
-        <lightning-accordion class="slds-box slds-box_xx-small slds-var-m-around_medium" key={data.countrySite}
-            allow-multiple-sections-open>
-            <lightning-accordion-section name={data.countrySite} label={data.countrySite}>
-                <div slot="actions">
-                    <lightning-button label="Button" title="Button" class="slds-var-m-left_x-small">
-                    </lightning-button>
-                </div>
-                <lightning-datatable key-field="data._children" data={data._children} columns={tableColumns}>
-                </lightning-datatable>
-                <div class="slds-var-m-vertical_small">
-                    <lightning-button label="Button" title="Button" class="slds-var-m-left_x-small">
-                    </lightning-button>
-                </div>
-            </lightning-accordion-section>
-        </lightning-accordion>
-    </template>
+    <div class="slds-scrollable_y custom-height slds-border_top">
+        <template for:each={gridData} for:item="data">
+            <lightning-accordion class="slds-box slds-box_xx-small slds-var-m-around_medium" key={data.countrySite}
+                allow-multiple-sections-open>
+                <lightning-accordion-section name={data.countrySite} label={data.countrySite}>
+                    <div slot="actions" class="slds-grid slds-grid_vertical-align-center">
+                        <span>Country selected | N out of N Sites selected</span>
+                        <lightning-input type="checkbox-button" label="Select All" class="slds-var-m-left_x-small">
+                        </lightning-input>
+                    </div>
+                    <lightning-datatable key-field="data._children" data={data._children} columns={tableColumns}>
+                    </lightning-datatable>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </template>
+    </div>
 </template>

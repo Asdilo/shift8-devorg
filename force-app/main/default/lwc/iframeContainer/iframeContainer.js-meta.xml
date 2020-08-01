@@ -8,9 +8,11 @@
         <target>lightning__AppPage</target>
         <target>lightning__RecordPage</target>
         <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage,lightningCommunity__Default">
             <property name="icon" type="String" default="standard:code_playground" label="Component Icon"/>
             <property name="title" type="String" default="iframe Container" label="Component Title"/>
             <property name="source" type="String" default="https://www.asteriskloftis.com" label="Source Link"/>

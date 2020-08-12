@@ -14,7 +14,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
-            <property name="title" type="String" default="Subject Enrollment" label="Component Title"/>
+            <property name="title" type="String" default="Data Highlights" label="Component Title"/>
             <property name="showIcon" type="boolean" default="false" label="Show Component Icon?"/>
             <property name="icon" type="String" default=" " label="Component Icon"/>
             <property name="kpiText" type="String" default="Since Last Visit" label="KPI Text"/>

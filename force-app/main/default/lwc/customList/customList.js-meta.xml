@@ -11,7 +11,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
-            <property name="title" type="String" default="PPD Custom List View" label="Component Title"/>
+            <property name="title" type="String" default="Custom List View" label="Component Title"/>
             <property name="styles" type="String" default=" " label="Enter CSS Styles"/>
             <property name="classes" type="String" default=" " label="Enter CSS Classes"/>
             <property name="icon" type="String" default="standard:opportunity" label="Component Icon"/>

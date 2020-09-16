@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>49.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>PE Visits POC</masterLabel>
+    <description>This custom component demonstrates the Patient Engagement visits UI.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage,lightningCommunity__Default">
+            <property name="icon" type="String" default="standard:code_playground" label="Component Icon"/>
+            <property name="title" type="String" default="Visits" label="Component Title"/>
+            <property name="cta" type="String" default="Need to schedule a visit that is not listed?" label="Call to Action Text"/>
+            <property name="btntxt" type="String" default="Request Visit" label="Button Text"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

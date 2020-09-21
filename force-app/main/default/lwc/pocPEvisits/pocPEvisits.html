@@ -1,14 +1,97 @@
 <template>
     <div class="slds-grid slds-theme_default">
+        <!-- ******************************* LEFT SIDE - VISIT CARD LIST ACCORDION ********************************************* -->
+
         <div class="slds-col slds-size_1-of-3 slds-border_right slds-var-p-around_medium">
 
-          <h2 class="slds-text-heading_medium">{title}</h2>
+            <h2 class="slds-text-heading_medium slds-var-p-bottom_x-large">{title}</h2>
+            <div class="slds-scrollable_y">
+                <lightning-accordion allow-multiple-sections-open active-section-name="upcoming">
+                    <lightning-accordion-section name="upcoming" label="Upcoming Visits">
+                        <div class="slds-var-m-bottom_small">
+                            <lightning-card title="Visit Name Here" icon-name="custom:custom38">
+                                <lightning-button label="Join" slot="actions"></lightning-button>
+                                <div class="slds-var-p-horizontal_medium">
+                                    <strong class="slds-text-body_regular">
+                                        <lightning-formatted-date-time value="1547250828000" year="numeric" month="long"
+                                            day="2-digit" weekday="long"></lightning-formatted-date-time>
+                                    </strong>
+                                    <p>
+                                        <lightning-formatted-date-time value="1547250828000" hour="2-digit"
+                                            minute="2-digit" time-zone-name="short"></lightning-formatted-date-time> |
+                                        Location of Visit
+                                    </p>
+                                </div>
+                            </lightning-card>
+                        </div>
+
+                        <div class="slds-box slds-var-m-bottom_small">
+                            <h4 class="slds-text-heading_small slds-var-p-bottom_medium">Visit Name Here</h4>
+                            <h5 class="slds-text-title">
+                                <lightning-formatted-date-time value="1547250828000" year="numeric" month="long"
+                                    day="2-digit" weekday="long"></lightning-formatted-date-time>
+                            </h5>
+                            <p class="slds-var-p-bottom_small">
+                                <lightning-formatted-date-time value="1547250828000" hour="2-digit" minute="2-digit"
+                                    time-zone-name="short"></lightning-formatted-date-time>
+                            </p>
+                            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                                <lightning-tile label="Location Name + Link" type="media">
+                                    <lightning-icon slot="media" size="small" icon-name="custom:custom38">
+                                    </lightning-icon>
+                                </lightning-tile>
+
+                                <lightning-button label="Join"></lightning-button>
+                            </div>
+                        </div>
+                    </lightning-accordion-section>
+                    <lightning-accordion-section name="past" label="Past Visits">
+                        <div class="slds-var-m-bottom_small">
+                            <lightning-card title="Visit Name Here" icon-name="custom:custom38">
+                                <div class="slds-var-p-horizontal_medium">
+                                    <strong class="slds-text-body_regular">
+                                        <lightning-formatted-date-time value="1547250828000" year="numeric" month="long"
+                                            day="2-digit" weekday="long"></lightning-formatted-date-time>
+                                    </strong>
+                                    <p>
+                                        <lightning-formatted-date-time value="1547250828000" hour="2-digit"
+                                            minute="2-digit" time-zone-name="short"></lightning-formatted-date-time> |
+                                        Location of Visit
+                                    </p>
+                                </div>
+                            </lightning-card>
+                        </div>
+
+                        <div class="slds-box slds-theme_shade slds-var-m-bottom_small">
+                            <h4 class="slds-text-heading_small slds-var-p-bottom_medium">Visit Name Here</h4>
+                            <h5 class="slds-text-title">
+                                <lightning-formatted-date-time value="1547250828000" year="numeric" month="long"
+                                    day="2-digit" weekday="long"></lightning-formatted-date-time>
+                            </h5>
+                            <p class="slds-var-p-bottom_small">
+                                <lightning-formatted-date-time value="1547250828000" hour="2-digit" minute="2-digit"
+                                    time-zone-name="short"></lightning-formatted-date-time>
+                            </p>
+                            <div class="slds-grid slds-grid_align-spread slds-grid_vertical-align-center">
+                                <lightning-tile label="Location Name + Link" type="media">
+                                    <lightning-icon slot="media" size="small" icon-name="custom:custom38">
+                                    </lightning-icon>
+                                </lightning-tile>
+                            </div>
+                        </div>
+
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </div>
+
         </div>
-        <div class="slds-col slds-size_2-of-3 slds-var-p-around_medium">
+        <!-- ******************************* RIGHT SIDE - VISIT DETAILS TABS ********************************************* -->
+
+        <div class="slds-col slds-size_2-of-3 ">
             <div class="slds-grid slds-wrap">
-                <div class="slds-col slds-size_full slds-theme_shade slds-text-align_right">
+                <div class="slds-col slds-size_full slds-var-p-around_medium slds-theme_shade slds-text-align_right">
                     <span class="slds-text-heading_small">{cta}</span>
-                    <lightning-button label={btntxt} title={btntext}  class="slds-var-m-left_small"></lightning-button>
+                    <lightning-button label={btntxt} title={btntext} class="slds-var-m-left_small"></lightning-button>
                 </div>
                 <div class="slds-col slds-size_full slds-var-p-around_medium">
                     <h2 class="slds-text-heading_medium">Initial Visit</h2>
@@ -16,33 +99,51 @@
                         <lightning-tab label="Visit Details" title="Visit Details">
                             <div class="slds-grid slds-gutters slds-wrap slds-var-p-around_small">
                                 <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
-                                    <h4 class="slds-text-heading_small slds-var-p-bottom_small">Visit Date Here</h4>
-                                    <h4 class="slds-text-heading_small slds-var-p-bottom_small">Visit Type Here</h4>
+                                    <h4 class="slds-text-heading_small">
+                                        <lightning-formatted-date-time value="1547250828000" year="numeric" month="long"
+                                            day="2-digit" weekday="long"></lightning-formatted-date-time>
+                                    </h4>
+                                    <p class="slds-var-p-bottom_small">
+                                        <lightning-formatted-date-time value="1547250828000" hour="2-digit"
+                                            minute="2-digit" time-zone-name="short"></lightning-formatted-date-time>
+                                    </p>
+                                    <h4 class="slds-text-heading_small slds-var-p-bottom_small">Visit Type/Location Here
+                                    </h4>
                                     <h4 class="slds-text-heading_small">Overview</h4>
                                     <p class="slds-var-p-bottom_small">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus orci erat, eget feugiat sapien condimentum sit
-                                        amet. Nam tristique odio sed nisi finibus, eget lacinia quam dictum. Aliquam vehicula fermentum ultricies.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus orci
+                                        erat, eget feugiat sapien condimentum sit
+                                        amet. Nam tristique odio sed nisi finibus, eget lacinia quam dictum. Aliquam
+                                        vehicula fermentum ultricies.
                                         Vestibulum odio lorem, sollicitudin sit amet enim id, ultrices faucibus massa.
                                     </p>
                                     <h4 class="slds-text-heading_small">What to Expect</h4>
                                     <p class="slds-var-p-bottom_small">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus orci erat, eget feugiat sapien condimentum sit
-                                        amet. Nam tristique odio sed nisi finibus, eget lacinia quam dictum. Aliquam vehicula fermentum ultricies.
-                                        Vestibulum odio lorem, sollicitudin sit amet enim id, ultrices faucibus massa.
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus orci
+                                        erat, eget feugiat sapien condimentum sit
+                                        amet. Nam tristique odio sed nisi finibus, eget lacinia quam dictum.
                                     </p>
                                 </div>
                                 <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
                                     <h4 class="slds-text-heading_small slds-var-p-bottom_small">Study Team</h4>
-                                    <lightning-tile class="slds-var-p-bottom_small" label="Michael Frenzo" href="/placholder.html" type="media">
-                                        <lightning-avatar slot="media" src="https://www.lightningdesignsystem.com/assets/images/avatar1.jpg" fallback-icon-name="standard:user" alternative-text="Michael Frenzo"></lightning-avatar>
+                                    <lightning-tile class="slds-var-p-bottom_small" label="Michael Frenzo"
+                                        href="/placholder.html" type="media">
+                                        <lightning-avatar slot="media"
+                                            src="https://www.lightningdesignsystem.com/assets/images/avatar1.jpg"
+                                            fallback-icon-name="standard:user" alternative-text="Michael Frenzo">
+                                        </lightning-avatar>
                                         <ul class="slds-list_horizontal slds-has-dividers_right">
                                             <li class="slds-item">Principal Investigator</li>
                                             <li class="slds-item">Another Field</li>
                                         </ul>
                                     </lightning-tile>
 
-                                    <lightning-tile class="slds-var-p-bottom_small"  label="Amos Mason" href="/placeholder.html" type="media">
-                                        <lightning-avatar slot="media" src="https://www.lightningdesignsystem.com/assets/images/avatar3.jpg" fallback-icon-name="standard:user" alternative-text="Amos Mason"></lightning-avatar>
+                                    <lightning-tile class="slds-var-p-bottom_small" label="Amos Mason"
+                                        href="/placeholder.html" type="media">
+                                        <lightning-avatar slot="media"
+                                            src="https://www.lightningdesignsystem.com/assets/images/avatar3.jpg"
+                                            fallback-icon-name="standard:user" alternative-text="Amos Mason">
+                                        </lightning-avatar>
                                         <ul class="slds-list_horizontal slds-has-dividers_right">
                                             <li class="slds-item">Study Team Memeber</li>
                                             <li class="slds-item">Another Field</li>
@@ -53,7 +154,42 @@
                             </div>
                         </lightning-tab>
                         <lightning-tab label="To Do" title="To do list">
-                            Two Content !
+                            <div class="slds-progress slds-progress_vertical">
+                                <ol class="slds-progress__list">
+                                  <li class="slds-progress__item slds-is-completed">
+                                    <span class="slds-icon_container slds-icon-utility-success slds-progress__marker slds-progress__marker_icon" title="Complete">
+                                        <lightning-icon  size="x-small" icon-name="utility:success">
+                                        </lightning-icon>
+                                      <span class="slds-assistive-text">Complete</span>
+                                    </span>
+                                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">Step 1</div>
+                                  </li>
+                                  <li class="slds-progress__item slds-is-active">
+                                    <div class="slds-progress__marker">
+                                      <span class="slds-assistive-text">Active</span>
+                                    </div>
+                                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">
+                                        Upload Medical Documents
+                                        <lightning-button variant="brand" label="Complete" title="Complete Action" class="slds-m-left_x-small"></lightning-button>
+                                    </div>
+                                  </li>
+                                  <li class="slds-progress__item">
+                                    <div class="slds-progress__marker"></div>
+                                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">Step 3</div>
+                                  </li>
+                                  <li class="slds-progress__item">
+                                    <div class="slds-progress__marker"></div>
+                                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">Step 4</div>
+                                  </li>
+                                  <li class="slds-progress__item">
+                                    <div class="slds-progress__marker"></div>
+                                    <div class="slds-progress__item_content slds-grid slds-grid_align-spread">Step 5</div>
+                                  </li>
+                                </ol>
+                                <div aria-valuemin="0" aria-valuemax="100" aria-valuenow="25" role="progressbar">
+                                  <span class="slds-assistive-text">Progress: 25%</span>
+                                </div>
+                              </div>
                         </lightning-tab>
                         <lightning-tab label="Uploads" title="Uploaded Files and Documents">
                             Three Content !
@@ -63,5 +199,5 @@
                 </div>
             </div>
         </div>
-      </div>
+    </div>
 </template>

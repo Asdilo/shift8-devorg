@@ -17,6 +17,7 @@
             <property name="title" type="String" default="Visits" label="Component Title"/>
             <property name="cta" type="String" default="Need to schedule a visit that is not listed?" label="Call to Action Text"/>
             <property name="btntxt" type="String" default="Request Visit" label="Button Text"/>
+            <property name="height" type="Integer" default="350" min="200" max="2000" label="Component Height" required="true"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

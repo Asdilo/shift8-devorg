@@ -12,8 +12,8 @@
                 <lightning-accordion allow-multiple-sections-open active-section-name="upcoming" class="slds-var-p-bottom_xx-large">
                     <lightning-accordion-section name="upcoming" label="Upcoming Visits">
                         <template for:each={data} for:item="visit">
-                            <div key={visit.id} id={visit.id} onclick={select} class="slds-box slds-var-m-bottom_small slds-text-link_reset">
-                                <h4 class="slds-text-heading_small slds-var-p-bottom_medium">{visit.name}</h4>
+                            <div key={visit.id} id={visit.id} data-visit-id={visit.id} onclick={select} class="slds-box slds-var-m-bottom_small slds-text-link_reset">
+                                <h4 class="slds-text-heading_small slds-var-p-bottom_medium">{visit.name} {visit.id}</h4>
                                 <h5 class="slds-text-title">
                                     <lightning-formatted-date-time value={visit.date_time} year="numeric" month="long"
                                         day="2-digit" weekday="long"></lightning-formatted-date-time>
@@ -67,7 +67,7 @@
                     <lightning-button label={btntxt} title={btntext} class="slds-var-m-left_small"></lightning-button>
                 </div>
                 <div class="slds-col slds-size_full slds-var-p-around_medium">
-                    <h2 class="slds-text-heading_medium">Initial Visit</h2>
+                    <h2 class="slds-text-heading_medium">{selectedDetails.name}</h2>
                     <lightning-tabset class="slds-var-m-horizontal_medium">
                         <lightning-tab label="Visit Details" title="Visit Details">
                             <div class="slds-grid slds-gutters slds-wrap slds-var-p-around_small">

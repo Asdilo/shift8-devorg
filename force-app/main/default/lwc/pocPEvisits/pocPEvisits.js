@@ -15,9 +15,9 @@ export default class PocPEvisits extends LightningElement {
     @track past = pastData;
     @track filterVals = 'all';
     @track isModalOpen = false; //Modal state
-    @track selectedVisit = '1'; //State of which visit is selected
-
-
+    @track selectedVisit = ''; //State of which visit is selected
+    @track selectedDetails = [];
+    
     get options() {
         return [
             { label: 'Show All', value: 'all' },
@@ -25,11 +25,28 @@ export default class PocPEvisits extends LightningElement {
             { label: 'Show Unscheduled', value: 'unscheduled' },
         ];
     }
+
+    
     select(event) {
-        // 
+        // Check if there is a Selected Visit, add or remove appropriate class
+        if (this.selectedVisit) {
+            this.template.querySelector('.selected-visit').classList.remove("selected-visit");
+            event.currentTarget.classList.add("selected-visit");
+        } else {
+            event.currentTarget.classList.add("selected-visit");
+        }
+
         var targetKey = event.currentTarget.getAttribute("id");
+        var targetId = event.currentTarget.getAttribute("data-visit-id");
+
         this.selectedVisit = targetKey;
+        this.selectedDetails = this.past[targetId];
+
         console.log(this.selectedVisit);
+        console.log(this.selectedDetails);
+        console.log(targetKey);
+        console.log(targetId);
+
     }
 
     modalOpen() {
@@ -41,5 +58,7 @@ export default class PocPEvisits extends LightningElement {
         // Close modal
         this.isModalOpen = false;
     }
+
+    
 
 }

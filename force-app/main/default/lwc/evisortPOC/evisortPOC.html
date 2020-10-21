@@ -1,15 +1,68 @@
 <template>
-    <lightning-tabset variant="vertical">
-        <lightning-tab label="Authentication">
-            One Content !
+    <lightning-tabset variant="vertical" class="evisort">
+        <lightning-tab label="Authentication" icon-name="utility:identity">
+            <div class="slds-illustration slds-illustration_small">
+                <svg class="slds-illustration__svg" xmlns="http://www.w3.org/2000/svg">
+                    <use xlink:href={logoSvgUrl}></use>
+                </svg>
+                <div class="slds-text-longform">
+                    <h3 class="slds-text-heading_medium">Evisort for Salesforce </h3>
+                    <p class="slds-text-body_regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        <a href="javascript:void(0);" class="slds-truncate" title="Learn More"> Link to documentation or
+                            instructions</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center slds-var-p-bottom_xx-large">
+                <div class="slds-col">
+                    <lightning-input type="password" label="Evisort Key" placeholder="Enter Evisort Key">
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-var-p-left_small">
+                    <lightning-button-stateful variant="brand" label-when-off="Validate Key"
+                        label-when-on="Key Validated" label-when-hover="Remove Key" icon-name-when-off="utility:add"
+                        icon-name-when-on="utility:check" icon-name-when-hover="utility:close" selected={isValid}
+                        onclick={handleValid}>
+                    </lightning-button-stateful>
+                </div>
+            </div>
+
         </lightning-tab>
-        <lightning-tab label="Sync Criteria">
-            Two Content !
+        <lightning-tab label="Sync Criteria" icon-name="utility:filter_criteria_rule">
+            <div class="slds-text-longform slds-text-align_center">
+                <lightning-icon src={iconSvgUrl} alternative-text="My Custom Icon"></lightning-icon>
+                <h3 class="slds-text-heading_medium">Document Sync Criteria</h3>
+                <p class="slds-text-body_regular"> Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </p>
+            </div>
+            <div class="slds-grid slds-grid_align-space">
+                <div class="slds-col">
+                    <lightning-card variant="Narrow" title="File Type Criteria" icon-name="standard:file">
+                        <p class="slds-var-p-horizontal_small">Card Body Narrow (custom component)</p>
+                    </lightning-card>
+                </div>
+                <div class="slds-col">
+                    <lightning-card variant="Narrow" title="Object Criteria" icon-name="standard:record">
+                        <p class="slds-var-p-horizontal_small">Card Body Narrow (custom component)</p>
+                    </lightning-card>
+                </div>
+                <div class="slds-col">
+                    <lightning-card variant="Narrow" title="Record Type Criteria" icon-name="standard:record_lookup">
+                        <p class="slds-var-p-horizontal_small">Card Body Narrow (custom component)</p>
+                    </lightning-card>
+                </div>
+            </div>
         </lightning-tab>
-        <lightning-tab label="Fields">
+        <lightning-tab label="Sync Fields" icon-name="utility:replace">
             Three Content !
         </lightning-tab>
-        <lightning-tab label="Other Options">
+        <lightning-tab label="Other Options" icon-name="utility:settings">
             Three Content !
         </lightning-tab>
     </lightning-tabset>

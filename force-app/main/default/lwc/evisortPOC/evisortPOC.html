@@ -1,69 +1,193 @@
 <template>
-    <lightning-tabset variant="vertical" class="evisort">
-        <lightning-tab label="Authentication" icon-name="utility:identity">
-            <div class="slds-illustration slds-illustration_small">
-                <svg class="slds-illustration__svg" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href={logoSvgUrl}></use>
-                </svg>
-                <div class="slds-text-longform">
-                    <h3 class="slds-text-heading_medium">Evisort for Salesforce </h3>
-                    <p class="slds-text-body_regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        <a href="javascript:void(0);" class="slds-truncate" title="Learn More"> Link to documentation or
-                            instructions</a>
-                    </p>
-                </div>
-            </div>
 
-            <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center slds-var-p-bottom_xx-large">
-                <div class="slds-col">
-                    <lightning-input type="password" label="Evisort Key" placeholder="Enter Evisort Key">
-                    </lightning-input>
+    <div class="slds-box slds-theme_default slds-var-m-bottom_medium">
+        <svg class="evisort-svg slds-var-m-bottom_medium" xmlns="http://www.w3.org/2000/svg">
+            <use xlink:href={logoSvgUrl}></use>
+        </svg>
+        <lightning-tabset variant="vertical" class="evisort">
+            <lightning-tab label="Authentication" icon-name="utility:identity">
+                <div
+                    class="slds-grid slds-grid_vertical-align-center slds-grid_align-center slds-text-longform slds-text-align_center">
+                    <div class="slds-col evisort-tab-summary slds-var-p-bottom_medium">
+                        <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center">
+                            <lightning-icon src={iconSvgUrl} class="slds-var-m-bottom_small"
+                                alternative-text="Evisort Icon">
+                            </lightning-icon>
+                            <h3 class="slds-text-heading_medium">Authentication</h3>
+                        </div>
+                        <p class="slds-text-body_regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                            irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            <a href="javascript:void(0);" class="slds-truncate" title="Learn More"> Link to
+                                documentation or
+                                instructions</a>
+                        </p>
+                    </div>
                 </div>
-                <div class="slds-col slds-var-p-left_small">
-                    <lightning-button-stateful variant="brand" label-when-off="Validate Key"
-                        label-when-on="Key Validated" label-when-hover="Remove Key" icon-name-when-off="utility:add"
-                        icon-name-when-on="utility:check" icon-name-when-hover="utility:close" selected={isValid}
-                        onclick={handleValid}>
-                    </lightning-button-stateful>
-                </div>
-            </div>
 
-        </lightning-tab>
-        <lightning-tab label="Sync Criteria" icon-name="utility:filter_criteria_rule">
-            <div class="slds-text-longform slds-text-align_center">
-                <lightning-icon src={iconSvgUrl} alternative-text="My Custom Icon"></lightning-icon>
-                <h3 class="slds-text-heading_medium">Document Sync Criteria</h3>
-                <p class="slds-text-body_regular"> Ut enim ad minim veniam, quis
-                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
-            </div>
-            <div class="slds-grid slds-grid_align-space">
-                <div class="slds-col">
-                    <lightning-card variant="Narrow" title="File Type Criteria" icon-name="standard:file">
-                        <p class="slds-var-p-horizontal_small">Card Body Narrow (custom component)</p>
-                    </lightning-card>
+                <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center slds-var-p-bottom_xx-large">
+                    <div class="slds-col">
+                        <lightning-input type="password" label="Evisort Key" placeholder="Enter Evisort Key">
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-var-p-left_small">
+                        <lightning-button-stateful variant="brand" label-when-off="Validate Key"
+                            label-when-on="Key Validated" label-when-hover="Remove Key" icon-name-when-off="utility:add"
+                            icon-name-when-on="utility:check" icon-name-when-hover="utility:close" selected={isValid}
+                            onclick={handleValid}>
+                        </lightning-button-stateful>
+                    </div>
                 </div>
-                <div class="slds-col">
-                    <lightning-card variant="Narrow" title="Object Criteria" icon-name="standard:record">
-                        <p class="slds-var-p-horizontal_small">Card Body Narrow (custom component)</p>
-                    </lightning-card>
+
+            </lightning-tab>
+            <lightning-tab label="Sync Criteria" icon-name="utility:filter_criteria_rule">
+                <div
+                    class="slds-grid slds-grid_vertical-align-center slds-grid_align-center slds-text-longform slds-text-align_center">
+                    <div class="slds-col evisort-tab-summary slds-var-p-bottom_medium">
+                        <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center">
+                            <lightning-icon src={iconSvgUrl} class="slds-var-m-bottom_small"
+                                alternative-text="Evisort Icon">
+                            </lightning-icon>
+                            <h3 class="slds-text-heading_medium">Document Sync Criteria</h3>
+                        </div>
+                        <p class="slds-text-body_regular"> Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                            irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
                 </div>
-                <div class="slds-col">
-                    <lightning-card variant="Narrow" title="Record Type Criteria" icon-name="standard:record_lookup">
-                        <p class="slds-var-p-horizontal_small">Card Body Narrow (custom component)</p>
-                    </lightning-card>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-card title="File Type Criteria" variant="narrow" icon-name="standard:file">
+                            <div class="slds-grid slds-grid_vertical slds-var-p-vertical_medium">
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <lightning-icon icon-name="doctype:pdf" class="slds-var-p-right_x-small"
+                                        alternative-text="PDF file" title="PDF"></lightning-icon>
+                                    <div class="slds-var-p-vertical_small">PDF File Type</div>
+                                </div>
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <lightning-icon icon-name="doctype:word" class="slds-var-m-right_x-small"
+                                        alternative-text="Word Docs file" title="Word Doc"></lightning-icon>
+                                    <div class="slds-var-p-vertical_small">Word Doc File Type</div>
+                                </div>
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <lightning-icon icon-name="doctype:gdocs" class="slds-var-m-right_x-small"
+                                        alternative-text="Google Doc file" title="Google Docs"></lightning-icon>
+                                    <div class="slds-var-p-vertical_small">Google Doc File Type</div>
+                                </div>
+                            </div>
+                        </lightning-card>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-card title="Object Criteria" variant="narrow" icon-name="standard:record">
+                            <div class="slds-grid slds-grid_vertical slds-var-m-vertical_medium">
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <lightning-icon icon-name="standard:opportunity" class="slds-var-m-right_x-small"
+                                        alternative-text="Opportunity Object" title="Opportunity"></lightning-icon>
+                                    <div class="slds-var-p-vertical_small">Opportunity Object</div>
+                                </div>
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <lightning-icon icon-name="standard:lead" class="slds-var-m-right_x-small"
+                                        alternative-text="Lead Object" title="Lead Object"></lightning-icon>
+                                    <div class="slds-var-p-vertical_small">Lead Object</div>
+                                </div>
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <lightning-icon icon-name="standard:account" class="slds-var-m-right_x-small"
+                                        alternative-text="Account Object" title="Account Object"></lightning-icon>
+                                    <div class="slds-var-p-vertical_small">Account Object</div>
+                                </div>
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <lightning-icon icon-name="standard:contract" class="slds-var-m-right_x-small"
+                                        alternative-text="Contract Object" title="Contract Object"></lightning-icon>
+                                    <div class="slds-var-p-vertical_small">Contract Object</div>
+                                </div>
+                            </div>
+                        </lightning-card>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-card title="Record Type Criteria" variant="narrow"
+                            icon-name="standard:record_lookup">
+                            <div class="slds-grid slds-grid_vertical slds-var-p-vertical_medium">
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <div class="slds-var-p-vertical_small">Record Type Alpha</div>
+                                </div>
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <div class="slds-var-p-vertical_small">Record Type Bravo</div>
+                                </div>
+                                <div
+                                    class="slds-col slds-grid slds-grid_vertical-align-center slds-var-m-bottom_medium">
+                                    <lightning-input type="toggle" class="slds-var-m-right_x-small"></lightning-input>
+                                    <div class="slds-var-p-vertical_small">Record Type Charlie</div>
+                                </div>
+                            </div>
+                        </lightning-card>
+                    </div>
                 </div>
-            </div>
-        </lightning-tab>
-        <lightning-tab label="Sync Fields" icon-name="utility:replace">
-            Three Content !
-        </lightning-tab>
-        <lightning-tab label="Other Options" icon-name="utility:settings">
-            Three Content !
-        </lightning-tab>
-    </lightning-tabset>
+            </lightning-tab>
+            <lightning-tab label="Sync Fields" icon-name="utility:replace">
+                <div
+                    class="slds-grid slds-grid_vertical-align-center slds-grid_align-center slds-text-longform slds-text-align_center">
+                    <div class="slds-col evisort-tab-summary slds-var-p-bottom_medium">
+                        <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center">
+                            <lightning-icon src={iconSvgUrl} class="slds-var-m-bottom_small"
+                                alternative-text="Evisort Icon">
+                            </lightning-icon>
+                            <h3 class="slds-text-heading_medium">Document Sync Criteria</h3>
+                        </div>
+                        <p class="slds-text-body_regular"> Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                            irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+        <lightning-button label="Apply Criteria To Files" title="Non-primary action" class="slds-var-m-left_x-small"></lightning-button>
+
+        <lightning-button variant="Save Changes" label="Brand" title="Primary action"  class="slds-var-m-left_x-small"></lightning-button>
+                    </div>
+                </div>
+                <div class="slds-card slds-scrollable_y evisort-sync-table">
+                    <lightning-datatable data={data} columns={columns} key-field="id" resize-column-disabled>
+                    </lightning-datatable>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Other Options" icon-name="utility:settings">
+                <div
+                    class="slds-grid slds-grid_vertical-align-center slds-grid_align-center slds-text-longform slds-text-align_center">
+                    <div class="slds-col evisort-tab-summary slds-var-p-bottom_medium">
+                        <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center">
+                            <lightning-icon src={iconSvgUrl} class="slds-var-m-bottom_small"
+                                alternative-text="Evisort Icon">
+                            </lightning-icon>
+                            <h3 class="slds-text-heading_medium">Other Options</h3>
+                        </div>
+                        <p class="slds-text-body_regular"> Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                            irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                    </div>
+                </div>
+            </lightning-tab>
+        </lightning-tabset>
+    </div>
 </template>

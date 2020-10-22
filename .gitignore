@@ -30,3 +30,4 @@ force-app/main/default/lwc/jsconfig.json
 .vscode/settings.json
 .vscode/settings.json
 .vscode/settings.json
+.localdevserver/metadata.json

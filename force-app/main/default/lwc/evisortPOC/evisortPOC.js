@@ -45,4 +45,13 @@ export default class EvisortPOC extends LightningElement {
          this.isValid = !this.isValid;
      }
 
+     get recordTypes() {
+         return [
+             { label: 'All', value: 'all' },
+             { label: 'Record Type Uno', value: 'uno' },
+             { label: 'Record Type Dos', value: 'dos' },
+             { label: 'Record Type Tres', value: 'tres' },
+         ];
+     }
+
 }

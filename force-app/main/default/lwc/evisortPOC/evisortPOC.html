@@ -42,13 +42,9 @@
                     </div>
                 </div>
 
-                <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center slds-var-p-bottom_xx-large">
+                <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center slds-var-p-bottom_large">
                     <div class="slds-col">
-                        <lightning-input type="password" label="Evisort Key" placeholder="Enter Evisort Key">
-                        </lightning-input>
-                    </div>
-                    <div class="slds-col slds-var-p-left_small">
-                        <lightning-button-stateful variant="brand" label-when-off="Validate Key"
+                        <lightning-button-stateful variant="brand" label-when-off="Check Validation"
                             label-when-on="Key Validated" label-when-hover="Remove Key" icon-name-when-off="utility:add"
                             icon-name-when-on="utility:check" icon-name-when-hover="utility:close" selected={isValid}
                             onclick={handleValid}>
@@ -56,6 +52,35 @@
                     </div>
                 </div>
 
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-card title="Step 1: Set Up Evisort API Key">
+                            <div slot="actions">
+                                <lightning-button label="Login To Evisort" icon-name="utility:new_window"
+                                    class="slds-var-m-left_small">
+                                </lightning-button>
+                            </div>
+                            <div
+                                class="slds-grid slds-grid_vertical slds-var-p-around_medium slds-theme_shade slds-var-m-bottom_large">
+                                <img src={apiSetupGifUrl} title="Evisort API Key Animated GIF">
+                            </div>
+                        </lightning-card>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-card title="Step 2: Configure Named Credential">
+                            <div slot="actions">
+                                <lightning-button label="Go To Salesforce Setup" icon-name="utility:new_window"
+                                    class="slds-var-m-left_small">
+                                </lightning-button>
+                            </div>
+                            <div
+                                class="slds-grid slds-grid_vertical slds-var-p-around_medium slds-theme_shade slds-var-m-bottom_large">
+                                <img src={namedCredentialGifUrl} title="Named Credential Animated GIF">
+                            </div>
+                        </lightning-card>
+                    </div>
+                </div>
             </lightning-tab>
             <lightning-tab label="Sync Criteria" icon-name="utility:filter_criteria_rule">
                 <div
@@ -75,7 +100,7 @@
                     </div>
                 </div>
                 <div class="slds-grid slds-gutters">
-                    <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-col slds-size_2-of-3">
                         <lightning-card title="Object and Record Type Criteria" icon-name="standard:record">
                             <div slot="actions">
                                 <lightning-button label="Add Object" slot="actions" icon-name="utility:add">
@@ -92,6 +117,9 @@
                                     <lightning-combobox label="Record Type" class="slds-var-m-left_small"
                                         placeholder="Select Record Type" options={recordTypes}>
                                     </lightning-combobox>
+                                    <lightning-input label="Field" type="search" class="slds-var-m-left_small"
+                                        placeholder="Search object fields">
+                                    </lightning-input>
                                     <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
                                         class="slds-var-m-left_small" title="Delete"></lightning-button-icon>
                                 </div>
@@ -101,6 +129,9 @@
                                     <lightning-combobox label="Record Type" class="slds-var-m-left_small"
                                         placeholder="Select Record Type" options={recordTypes}>
                                     </lightning-combobox>
+                                    <lightning-input label="Folder Name" type="search" class="slds-var-m-left_small"
+                                        placeholder="Search object fields">
+                                    </lightning-input>
                                     <lightning-button-icon icon-name="utility:delete" alternative-text="Delete"
                                         class="slds-var-m-left_small" title="Delete"></lightning-button-icon>
                                 </div>
@@ -111,7 +142,7 @@
                             </div>
                         </lightning-card>
                     </div>
-                    <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-col slds-size_1-of-3">
                         <lightning-card title="File Type Criteria" icon-name="standard:file">
                             <div slot="actions">
                                 <lightning-button label="Save" slot="actions" variant="brand" icon-name="utility:save"
@@ -149,7 +180,7 @@
                             <lightning-icon src={iconSvgUrl} class="slds-var-m-bottom_small"
                                 alternative-text="Evisort Icon">
                             </lightning-icon>
-                            <h3 class="slds-text-heading_medium">Document Sync Criteria</h3>
+                            <h3 class="slds-text-heading_medium">Sync Fields</h3>
                         </div>
                         <p class="slds-text-body_regular"> Ut enim ad minim veniam, quis nostrud exercitation ullamco
                             laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -164,7 +195,34 @@
                     </div>
                 </div>
                 <div class="slds-card slds-scrollable_y evisort-sync-table">
-                    <lightning-datatable data={data} columns={columns} key-field="id" resize-column-disabled>
+                    <lightning-datatable data={data} columns={columns} key-field="id">
+                    </lightning-datatable>
+                </div>
+            </lightning-tab>
+            <lightning-tab label="Sync Clauses" icon-name="utility:retweet">
+                <div
+                    class="slds-grid slds-grid_vertical-align-center slds-grid_align-center slds-text-longform slds-text-align_center">
+                    <div class="slds-col evisort-tab-summary slds-var-p-bottom_medium">
+                        <div class="slds-grid slds-grid_vertical-align-end slds-grid_align-center">
+                            <lightning-icon src={iconSvgUrl} class="slds-var-m-bottom_small"
+                                alternative-text="Evisort Icon">
+                            </lightning-icon>
+                            <h3 class="slds-text-heading_medium">Sync Clauses</h3>
+                        </div>
+                        <p class="slds-text-body_regular"> Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        </p>
+                        <div class="slds-var-p-vertical_medium">
+                            <lightning-button label="Pull From Evisort" title="Pull From Evisort"
+                                icon-name="utility:download" class="slds-var-m-left_x-small"></lightning-button>
+                            <lightning-button variant="brand" label="Save and Apply" title="Save and Apply"
+                                icon-name="utility:save" class="slds-var-m-left_x-small"></lightning-button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-card slds-scrollable_y evisort-sync-table">
+                    <lightning-datatable data={data} columns={clauseColumns} key-field="id" wrap-text-max-lines="10">
                     </lightning-datatable>
                 </div>
             </lightning-tab>

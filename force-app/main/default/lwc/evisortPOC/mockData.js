@@ -1,273 +1,588 @@
 const mockData = [{
-    "id": 1,
-    "label": "lectus pellentesque",
-    "type": "String",
-    "active": true,
-    "created": "2020-09-30T05:49:40Z"
-  }, {
-    "id": 2,
-    "label": "eget eleifend luctus",
-    "type": "Boolean",
-    "active": false,
-    "created": "2020-10-03T08:36:02Z"
-  }, {
-    "id": 3,
-    "label": "odio justo",
-    "type": "Date Time",
-    "active": false,
-    "created": "2020-09-14T02:04:29Z"
-  }, {
-    "id": 4,
-    "label": "felis sed",
-    "type": "Boolean",
-    "active": true,
-    "created": "2020-07-12T19:56:18Z"
-  }, {
-    "id": 5,
-    "label": "nam",
-    "type": "Boolean",
-    "active": true,
-    "created": "2020-09-24T14:49:34Z"
-  }, {
-    "id": 6,
-    "label": "amet eleifend",
-    "type": "Date Time",
-    "active": true,
-    "created": "2020-10-14T05:08:26Z"
-  }, {
-    "id": 7,
-    "label": "platea dictumst",
-    "type": "Date Time",
-    "active": false,
-    "created": "2020-06-11T07:52:31Z"
-  }, {
-    "id": 8,
-    "label": "aliquam convallis",
-    "type": "Date Time",
-    "active": true,
-    "created": "2020-05-18T20:47:26Z"
-  }, {
-    "id": 9,
-    "label": "donec diam neque",
-    "type": "Boolean",
-    "active": false,
-    "created": "2020-06-07T12:13:00Z"
-  }, {
-    "id": 10,
-    "label": "lobortis ligula sit amet",
-    "type": "Number",
-    "active": false,
-    "created": "2019-12-03T07:39:04Z"
-  }, {
-    "id": 11,
-    "label": "eget rutrum at lorem",
-    "type": "String",
-    "active": true,
-    "created": "2019-11-29T18:37:34Z"
-  }, {
-    "id": 12,
-    "label": "at nibh",
-    "type": "String",
-    "active": false,
-    "created": "2020-03-26T18:13:57Z"
-  }, {
-    "id": 13,
-    "label": "lorem ipsum dolor",
-    "type": "Number",
-    "active": false,
-    "created": "2020-02-20T16:13:35Z"
-  }, {
-    "id": 14,
-    "label": "eget orci vehicula condimentum",
-    "type": "Date Time",
-    "active": true,
-    "created": "2020-04-12T07:31:49Z"
-  }, {
-    "id": 15,
-    "label": "nisi nam",
-    "type": "Single Select",
-    "active": true,
-    "created": "2020-03-24T05:16:54Z"
-  }, {
-    "id": 16,
-    "label": "donec semper sapien",
-    "type": "Boolean",
-    "active": true,
-    "created": "2020-03-11T10:41:38Z"
-  }, {
-    "id": 17,
-    "label": "id mauris vulputate",
-    "type": "Date Time",
-    "active": true,
-    "created": "2019-10-25T09:09:20Z"
-  }, {
-    "id": 18,
-    "label": "non velit donec",
-    "type": "Single Select",
-    "active": false,
-    "created": "2020-10-05T00:49:21Z"
-  }, {
-    "id": 19,
-    "label": "a libero nam dui",
-    "type": "Single Select",
-    "active": false,
-    "created": "2020-06-25T07:20:52Z"
-  }, {
-    "id": 20,
-    "label": "mollis",
-    "type": "Multi Select",
-    "active": false,
-    "created": "2019-11-05T13:03:44Z"
-  }, {
-    "id": 21,
-    "label": "magna vulputate",
-    "type": "Single Select",
-    "active": false,
-    "created": "2020-06-13T07:26:01Z"
-  }, {
-    "id": 22,
-    "label": "nibh fusce lacus purus",
-    "type": "Number",
-    "active": true,
-    "created": "2019-12-05T11:00:55Z"
-  }, {
-    "id": 23,
-    "label": "turpis enim blandit mi",
-    "type": "Date Time",
-    "active": false,
-    "created": "2019-12-20T18:04:40Z"
-  }, {
-    "id": 24,
-    "label": "pellentesque ultrices mattis odio",
-    "type": "String",
-    "active": false,
-    "created": "2020-10-14T17:09:41Z"
-  }, {
-    "id": 25,
-    "label": "lacinia aenean sit",
-    "type": "String",
-    "active": true,
-    "created": "2020-09-30T08:24:20Z"
-  }, {
-    "id": 26,
-    "label": "lacinia erat",
-    "type": "String",
-    "active": false,
-    "created": "2020-10-12T05:26:36Z"
-  }, {
-    "id": 27,
-    "label": "faucibus orci",
-    "type": "Number",
-    "active": true,
-    "created": "2020-03-28T21:33:05Z"
-  }, {
-    "id": 28,
-    "label": "eget semper rutrum nulla",
-    "type": "Boolean",
-    "active": false,
-    "created": "2020-06-28T07:00:56Z"
-  }, {
-    "id": 29,
-    "label": "purus",
-    "type": "Single Select",
-    "active": true,
-    "created": "2020-05-30T23:38:37Z"
-  }, {
-    "id": 30,
-    "label": "eu",
-    "type": "Single Select",
-    "active": true,
-    "created": "2019-09-24T17:54:48Z"
-  }, {
-    "id": 31,
-    "label": "non ligula pellentesque ultrices",
-    "type": "Number",
-    "active": false,
-    "created": "2020-04-15T13:02:01Z"
-  }, {
-    "id": 32,
-    "label": "nisl nunc",
-    "type": "String",
-    "active": true,
-    "created": "2019-11-01T04:42:46Z"
-  }, {
-    "id": 33,
-    "label": "dolor",
-    "type": "Single Select",
-    "active": true,
-    "created": "2019-12-29T23:05:58Z"
-  }, {
-    "id": 34,
-    "label": "consequat in consequat",
-    "type": "Boolean",
-    "active": false,
-    "created": "2020-09-18T04:12:47Z"
-  }, {
-    "id": 35,
-    "label": "ante ipsum primis in",
-    "type": "Number",
-    "active": true,
-    "created": "2019-12-19T17:28:29Z"
-  }, {
-    "id": 36,
-    "label": "lectus suspendisse",
-    "type": "Number",
-    "active": false,
-    "created": "2019-11-24T21:03:38Z"
-  }, {
-    "id": 37,
-    "label": "faucibus orci luctus",
-    "type": "Number",
-    "active": true,
-    "created": "2019-10-03T13:10:32Z"
-  }, {
-    "id": 38,
-    "label": "consequat varius integer ac",
-    "type": "Number",
-    "active": false,
-    "created": "2020-04-05T02:13:49Z"
-  }, {
-    "id": 39,
-    "label": "consequat metus sapien ut",
-    "type": "String",
-    "active": false,
-    "created": "2020-02-02T23:20:30Z"
-  }, {
-    "id": 40,
-    "label": "sed magna at",
-    "type": "Number",
-    "active": false,
-    "created": "2020-03-16T18:45:11Z"
-  }, {
-    "id": 41,
-    "label": "suspendisse",
-    "type": "Single Select",
-    "active": false,
-    "created": "2020-02-27T00:52:20Z"
-  }, {
-    "id": 42,
-    "label": "convallis",
-    "type": "Multi Select",
-    "active": false,
-    "created": "2020-01-04T05:26:54Z"
-  }, {
-    "id": 43,
-    "label": "erat",
-    "type": "String",
-    "active": false,
-    "created": "2019-09-30T03:02:13Z"
-  }, {
-    "id": 44,
-    "label": "eget vulputate ut",
-    "type": "Date Time",
-    "active": false,
-    "created": "2019-09-06T18:15:37Z"
-  }, {
-    "id": 45,
-    "label": "est et",
-    "type": "Number",
-    "active": false,
-    "created": "2020-06-25T10:42:46Z"
-  }];
+  "id": 1,
+  "label": "n/a",
+  "type": "Number",
+  "active": true,
+  "sfObject": "Account",
+  "sfField": "methodical",
+  "clauseLabel": "Adaptive optimizing benchmark",
+  "clauseValue": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
+  "clauseActive": true,
+  "clauseObject": "Account",
+  "clauseField": "Victor Sierra",
+  "created": "2020-11-07T12:04:52Z"
+}, {
+  "id": 2,
+  "label": "Finance",
+  "type": "Number",
+  "active": true,
+  "sfObject": "Account",
+  "sfField": "Public-key",
+  "clauseLabel": "Pre-emptive exuding implementation",
+  "clauseValue": "Nulla facilisi. Cras non velit nec nisi vulputate nonummy.",
+  "clauseActive": false,
+  "clauseObject": "Contract",
+  "clauseField": "Papa",
+  "created": "2020-10-06T12:38:19Z"
+}, {
+  "id": 3,
+  "label": "Consumer Services",
+  "type": "Boolean",
+  "active": true,
+  "sfObject": "Lead",
+  "sfField": "strategy",
+  "clauseLabel": "Synergized fresh-thinking challenge",
+  "clauseValue": "Nulla mollis molestie lorem.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "Sierra X-ray Lima",
+  "created": "2020-10-08T00:37:43Z"
+}, {
+  "id": 4,
+  "label": "n/a",
+  "type": "Number",
+  "active": true,
+  "sfObject": "Custom Obj 1",
+  "sfField": "Graphical User Interface",
+  "clauseLabel": "Synchronised bandwidth-monitored process improvement",
+  "clauseValue": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "Alfa Kilo",
+  "created": "2020-10-17T05:17:57Z"
+}, {
+  "id": 5,
+  "label": "Finance",
+  "type": "Multiselect",
+  "active": false,
+  "sfObject": "Contract",
+  "sfField": "challenge",
+  "clauseLabel": "Optimized systematic capacity",
+  "clauseValue": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "Golf Juliett",
+  "created": "2020-10-16T23:23:28Z"
+}, {
+  "id": 6,
+  "label": "Consumer Services",
+  "type": "Single Select",
+  "active": true,
+  "sfObject": "Contract",
+  "sfField": "leading edge",
+  "clauseLabel": "Configurable encompassing Graphical User Interface",
+  "clauseValue": "Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo.",
+  "clauseActive": false,
+  "clauseObject": "Contract",
+  "clauseField": "India Golf",
+  "created": "2020-10-13T05:24:13Z"
+}, {
+  "id": 7,
+  "label": "Health Care",
+  "type": "Single Select",
+  "active": false,
+  "sfObject": "Custom Obj 1",
+  "sfField": "strategy",
+  "clauseLabel": "Monitored client-driven local area network",
+  "clauseValue": "Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 1",
+  "clauseField": "Romeo Juliett",
+  "created": "2020-11-09T05:29:33Z"
+}, {
+  "id": 8,
+  "label": "Capital Goods",
+  "type": "Single Select",
+  "active": true,
+  "sfObject": "Account",
+  "sfField": "matrices",
+  "clauseLabel": "Polarised heuristic artificial intelligence",
+  "clauseValue": "Curabitur convallis.",
+  "clauseActive": false,
+  "clauseObject": "Account",
+  "clauseField": "Alfa X-ray Bravo",
+  "created": "2020-10-12T17:18:48Z"
+}, {
+  "id": 9,
+  "label": "Consumer Non-Durables",
+  "type": "Number",
+  "active": true,
+  "sfObject": "Contract",
+  "sfField": "hardware",
+  "clauseLabel": "Multi-layered non-volatile encryption",
+  "clauseValue": "Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+  "clauseActive": true,
+  "clauseObject": "Lead",
+  "clauseField": "Alfa Quebec Sierra",
+  "created": "2020-10-08T01:32:46Z"
+}, {
+  "id": 10,
+  "label": "Basic Industries",
+  "type": "Single Select",
+  "active": true,
+  "sfObject": "Lead",
+  "sfField": "strategy",
+  "clauseLabel": "Integrated methodical application",
+  "clauseValue": "Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "Lima Alfa",
+  "created": "2020-10-16T06:41:42Z"
+}, {
+  "id": 11,
+  "label": "Finance",
+  "type": "Number",
+  "active": true,
+  "sfObject": "Lead",
+  "sfField": "Fully-configurable",
+  "clauseLabel": "Ergonomic solution-oriented conglomeration",
+  "clauseValue": "Donec ut mauris eget massa tempor convallis.",
+  "clauseActive": false,
+  "clauseObject": "Custom Obj 1",
+  "clauseField": "Victor Quebec Bravo",
+  "created": "2020-10-21T09:53:56Z"
+}, {
+  "id": 12,
+  "label": "Technology",
+  "type": "Single Select",
+  "active": true,
+  "sfObject": "Custom Obj 1",
+  "sfField": "paradigm",
+  "clauseLabel": "Integrated 24 hour alliance",
+  "clauseValue": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "Juliett",
+  "created": "2020-10-14T15:56:33Z"
+}, {
+  "id": 13,
+  "label": "n/a",
+  "type": "Boolean",
+  "active": true,
+  "sfObject": "Account",
+  "sfField": "flexibility",
+  "clauseLabel": "Virtual homogeneous system engine",
+  "clauseValue": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
+  "clauseActive": false,
+  "clauseObject": "Custom Obj 1",
+  "clauseField": "Zulu India Golf",
+  "created": "2020-11-04T11:23:41Z"
+}, {
+  "id": 14,
+  "label": "Finance",
+  "type": "String",
+  "active": false,
+  "sfObject": "Opportunity",
+  "sfField": "Reduced",
+  "clauseLabel": "Triple-buffered homogeneous info-mediaries",
+  "clauseValue": "Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.",
+  "clauseActive": false,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "India X-ray Juliett",
+  "created": "2020-10-19T20:10:46Z"
+}, {
+  "id": 15,
+  "label": "Capital Goods",
+  "type": "Boolean",
+  "active": false,
+  "sfObject": "Account",
+  "sfField": "bottom-line",
+  "clauseLabel": "Object-based national concept",
+  "clauseValue": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 1",
+  "clauseField": "Victor",
+  "created": "2020-10-28T01:21:45Z"
+}, {
+  "id": 16,
+  "label": "Public Utilities",
+  "type": "Boolean",
+  "active": false,
+  "sfObject": "Account",
+  "sfField": "productivity",
+  "clauseLabel": "Synchronised tertiary project",
+  "clauseValue": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus.",
+  "clauseActive": false,
+  "clauseObject": "Lead",
+  "clauseField": "India",
+  "created": "2020-10-08T06:37:02Z"
+}, {
+  "id": 17,
+  "label": "Finance",
+  "type": "Multiselect",
+  "active": true,
+  "sfObject": "Contract",
+  "sfField": "array",
+  "clauseLabel": "Re-contextualized radical knowledge user",
+  "clauseValue": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue.",
+  "clauseActive": true,
+  "clauseObject": "Opportunity",
+  "clauseField": "Zulu",
+  "created": "2020-10-06T20:24:44Z"
+}, {
+  "id": 18,
+  "label": "Basic Industries",
+  "type": "Multiselect",
+  "active": true,
+  "sfObject": "Lead",
+  "sfField": "Enterprise-wide",
+  "clauseLabel": "Integrated background installation",
+  "clauseValue": "Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+  "clauseActive": false,
+  "clauseObject": "Contract",
+  "clauseField": "Delta Uniform Whiskey",
+  "created": "2020-10-18T21:04:47Z"
+}, {
+  "id": 19,
+  "label": "Capital Goods",
+  "type": "Boolean",
+  "active": false,
+  "sfObject": "Custom Obj 1",
+  "sfField": "Fundamental",
+  "clauseLabel": "Innovative human-resource groupware",
+  "clauseValue": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+  "clauseActive": false,
+  "clauseObject": "Opportunity",
+  "clauseField": "Sierra Delta Charlie",
+  "created": "2020-11-01T13:18:10Z"
+}, {
+  "id": 20,
+  "label": "Health Care",
+  "type": "Number",
+  "active": false,
+  "sfObject": "Custom Obj 2",
+  "sfField": "bandwidth-monitored",
+  "clauseLabel": "Face to face dedicated support",
+  "clauseValue": "In sagittis dui vel nisl. Duis ac nibh.",
+  "clauseActive": false,
+  "clauseObject": "Account",
+  "clauseField": "Echo Oscar Whiskey",
+  "created": "2020-10-12T03:08:13Z"
+}, {
+  "id": 21,
+  "label": "Health Care",
+  "type": "Number",
+  "active": false,
+  "sfObject": "Account",
+  "sfField": "non-volatile",
+  "clauseLabel": "Pre-emptive regional parallelism",
+  "clauseValue": "Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum.",
+  "clauseActive": true,
+  "clauseObject": "Lead",
+  "clauseField": "November Whiskey",
+  "created": "2020-11-02T00:24:58Z"
+}, {
+  "id": 22,
+  "label": "Finance",
+  "type": "String",
+  "active": false,
+  "sfObject": "Lead",
+  "sfField": "solution-oriented",
+  "clauseLabel": "Persistent uniform task-force",
+  "clauseValue": "Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+  "clauseActive": false,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "Papa",
+  "created": "2020-10-14T14:31:43Z"
+}, {
+  "id": 23,
+  "label": "Technology",
+  "type": "Number",
+  "active": true,
+  "sfObject": "Contract",
+  "sfField": "access",
+  "clauseLabel": "Switchable even-keeled intranet",
+  "clauseValue": "Morbi a ipsum.",
+  "clauseActive": true,
+  "clauseObject": "Contract",
+  "clauseField": "Bravo Sierra",
+  "created": "2020-10-28T20:33:30Z"
+}, {
+  "id": 24,
+  "label": "Technology",
+  "type": "Single Select",
+  "active": false,
+  "sfObject": "Lead",
+  "sfField": "neutral",
+  "clauseLabel": "Secured bandwidth-monitored help-desk",
+  "clauseValue": "Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus.",
+  "clauseActive": false,
+  "clauseObject": "Custom Obj 1",
+  "clauseField": "Kilo Mike",
+  "created": "2020-10-21T04:16:08Z"
+}, {
+  "id": 25,
+  "label": "n/a",
+  "type": "Number",
+  "active": true,
+  "sfObject": "Account",
+  "sfField": "Reduced",
+  "clauseLabel": "Realigned leading edge neural-net",
+  "clauseValue": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "X-ray",
+  "created": "2020-11-02T10:44:25Z"
+}, {
+  "id": 26,
+  "label": "Health Care",
+  "type": "Multiselect",
+  "active": true,
+  "sfObject": "Custom Obj 2",
+  "sfField": "intranet",
+  "clauseLabel": "Exclusive stable collaboration",
+  "clauseValue": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.",
+  "clauseActive": true,
+  "clauseObject": "Opportunity",
+  "clauseField": "Charlie",
+  "created": "2020-11-03T03:27:33Z"
+}, {
+  "id": 27,
+  "label": "Transportation",
+  "type": "Single Select",
+  "active": true,
+  "sfObject": "Opportunity",
+  "sfField": "Team-oriented",
+  "clauseLabel": "Reactive 5th generation support",
+  "clauseValue": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+  "clauseActive": true,
+  "clauseObject": "Account",
+  "clauseField": "Uniform",
+  "created": "2020-11-03T17:32:20Z"
+}, {
+  "id": 28,
+  "label": "Health Care",
+  "type": "String",
+  "active": false,
+  "sfObject": "Custom Obj 2",
+  "sfField": "emulation",
+  "clauseLabel": "Programmable client-server circuit",
+  "clauseValue": "Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "India",
+  "created": "2020-10-19T17:23:34Z"
+}, {
+  "id": 29,
+  "label": "n/a",
+  "type": "String",
+  "active": false,
+  "sfObject": "Custom Obj 2",
+  "sfField": "local",
+  "clauseLabel": "Synergized directional adapter",
+  "clauseValue": "Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.",
+  "clauseActive": false,
+  "clauseObject": "Opportunity",
+  "clauseField": "Whiskey Mike",
+  "created": "2020-11-05T22:17:59Z"
+}, {
+  "id": 30,
+  "label": "Health Care",
+  "type": "String",
+  "active": false,
+  "sfObject": "Contract",
+  "sfField": "multimedia",
+  "clauseLabel": "Public-key encompassing application",
+  "clauseValue": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+  "clauseActive": false,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "Oscar",
+  "created": "2020-11-09T20:02:00Z"
+}, {
+  "id": 31,
+  "label": "Miscellaneous",
+  "type": "Multiselect",
+  "active": false,
+  "sfObject": "Opportunity",
+  "sfField": "zero tolerance",
+  "clauseLabel": "Synergized heuristic contingency",
+  "clauseValue": "Pellentesque eget nunc.",
+  "clauseActive": true,
+  "clauseObject": "Contract",
+  "clauseField": "Zulu Mike",
+  "created": "2020-10-16T07:03:53Z"
+}, {
+  "id": 32,
+  "label": "Energy",
+  "type": "Number",
+  "active": false,
+  "sfObject": "Custom Obj 1",
+  "sfField": "encryption",
+  "clauseLabel": "Triple-buffered zero defect encryption",
+  "clauseValue": "Pellentesque eget nunc.",
+  "clauseActive": false,
+  "clauseObject": "Contract",
+  "clauseField": "Lima Kilo Quebec",
+  "created": "2020-10-22T17:03:31Z"
+}, {
+  "id": 33,
+  "label": "Consumer Durables",
+  "type": "String",
+  "active": false,
+  "sfObject": "Opportunity",
+  "sfField": "secured line",
+  "clauseLabel": "Multi-tiered cohesive solution",
+  "clauseValue": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue.",
+  "clauseActive": false,
+  "clauseObject": "Opportunity",
+  "clauseField": "Tango",
+  "created": "2020-10-08T19:36:16Z"
+}, {
+  "id": 34,
+  "label": "Finance",
+  "type": "Number",
+  "active": false,
+  "sfObject": "Contract",
+  "sfField": "system engine",
+  "clauseLabel": "Monitored directional encryption",
+  "clauseValue": "In hac habitasse platea dictumst.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 1",
+  "clauseField": "Kilo India",
+  "created": "2020-10-20T21:06:38Z"
+}, {
+  "id": 35,
+  "label": "Transportation",
+  "type": "Boolean",
+  "active": true,
+  "sfObject": "Lead",
+  "sfField": "impactful",
+  "clauseLabel": "Fundamental modular instruction set",
+  "clauseValue": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst.",
+  "clauseActive": false,
+  "clauseObject": "Account",
+  "clauseField": "Charlie Quebec Bravo",
+  "created": "2020-10-30T15:41:31Z"
+}, {
+  "id": 36,
+  "label": "Public Utilities",
+  "type": "Single Select",
+  "active": false,
+  "sfObject": "Lead",
+  "sfField": "foreground",
+  "clauseLabel": "Optional modular productivity",
+  "clauseValue": "Integer a nibh. In quis justo.",
+  "clauseActive": true,
+  "clauseObject": "Account",
+  "clauseField": "Bravo Charlie",
+  "created": "2020-10-31T13:52:05Z"
+}, {
+  "id": 37,
+  "label": "Finance",
+  "type": "Multiselect",
+  "active": false,
+  "sfObject": "Lead",
+  "sfField": "framework",
+  "clauseLabel": "Grass-roots bi-directional knowledge user",
+  "clauseValue": "Integer a nibh. In quis justo.",
+  "clauseActive": true,
+  "clauseObject": "Custom Obj 2",
+  "clauseField": "Mike",
+  "created": "2020-11-05T17:22:52Z"
+}, {
+  "id": 38,
+  "label": "Consumer Services",
+  "type": "Single Select",
+  "active": true,
+  "sfObject": "Lead",
+  "sfField": "user-facing",
+  "clauseLabel": "Diverse static capacity",
+  "clauseValue": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
+  "clauseActive": false,
+  "clauseObject": "Account",
+  "clauseField": "Echo Kilo",
+  "created": "2020-10-19T08:39:27Z"
+}, {
+  "id": 39,
+  "label": "Consumer Services",
+  "type": "Number",
+  "active": true,
+  "sfObject": "Contract",
+  "sfField": "Multi-channelled",
+  "clauseLabel": "Distributed scalable customer loyalty",
+  "clauseValue": "Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla.",
+  "clauseActive": true,
+  "clauseObject": "Lead",
+  "clauseField": "November Charlie",
+  "created": "2020-10-07T16:40:15Z"
+}, {
+  "id": 40,
+  "label": "Public Utilities",
+  "type": "Multiselect",
+  "active": true,
+  "sfObject": "Contract",
+  "sfField": "pricing structure",
+  "clauseLabel": "Compatible didactic frame",
+  "clauseValue": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis.",
+  "clauseActive": true,
+  "clauseObject": "Lead",
+  "clauseField": "Golf Yankee",
+  "created": "2020-11-03T02:48:29Z"
+}, {
+  "id": 41,
+  "label": "n/a",
+  "type": "Multiselect",
+  "active": false,
+  "sfObject": "Account",
+  "sfField": "Versatile",
+  "clauseLabel": "Intuitive fresh-thinking info-mediaries",
+  "clauseValue": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
+  "clauseActive": true,
+  "clauseObject": "Lead",
+  "clauseField": "Papa Yankee",
+  "created": "2020-10-24T00:03:34Z"
+}, {
+  "id": 42,
+  "label": "Health Care",
+  "type": "Boolean",
+  "active": false,
+  "sfObject": "Custom Obj 2",
+  "sfField": "system engine",
+  "clauseLabel": "Intuitive local budgetary management",
+  "clauseValue": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+  "clauseActive": false,
+  "clauseObject": "Account",
+  "clauseField": "Kilo Zulu",
+  "created": "2020-10-24T20:05:33Z"
+}, {
+  "id": 43,
+  "label": "n/a",
+  "type": "Number",
+  "active": true,
+  "sfObject": "Contract",
+  "sfField": "regional",
+  "clauseLabel": "Multi-channelled executive benchmark",
+  "clauseValue": "Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
+  "clauseActive": false,
+  "clauseObject": "Opportunity",
+  "clauseField": "Kilo",
+  "created": "2020-10-29T07:05:33Z"
+}, {
+  "id": 44,
+  "label": "n/a",
+  "type": "Single Select",
+  "active": false,
+  "sfObject": "Custom Obj 2",
+  "sfField": "info-mediaries",
+  "clauseLabel": "Operative mission-critical knowledge user",
+  "clauseValue": "Nullam sit amet turpis elementum ligula vehicula consequat.",
+  "clauseActive": false,
+  "clauseObject": "Opportunity",
+  "clauseField": "Mike Uniform",
+  "created": "2020-10-27T18:14:30Z"
+}, {
+  "id": 45,
+  "label": "Finance",
+  "type": "Single Select",
+  "active": false,
+  "sfObject": "Account",
+  "sfField": "intangible",
+  "clauseLabel": "Managed demand-driven system engine",
+  "clauseValue": "Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
+  "clauseActive": false,
+  "clauseObject": "Account",
+  "clauseField": "Victor Delta Whiskey",
+  "created": "2020-10-22T01:08:07Z"
+}];
 
   export { mockData};

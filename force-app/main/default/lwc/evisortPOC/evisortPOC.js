@@ -23,6 +23,49 @@ const columns = [
         editable: true
     },
     {
+      type: "text",
+      fieldName: "sfObject",
+      label: "Object Map",
+      sortable: true,
+      editable: true
+    },
+    {
+      type: "text",
+      fieldName: "sfField",
+      label: "Field Map",
+      sortable: true,
+      editable: true
+
+    },
+    {
+      type: "date",
+      fieldName: "created",
+      label: "Created Date",
+      sortable: true
+    }
+  ];
+
+  const clauseColumns = [
+    {
+      type: "text",
+      fieldName: "clauseLabel",
+      label: "Label",
+      sortable: true
+    },
+    {
+        type: "text",
+        fieldName: "clauseValue",
+        label: "Value",
+        sortable: true
+      },
+      {
+        type: "boolean",
+        fieldName: "clauseActive",
+        label: "Active",
+        sortable: true,
+        editable: true
+    },
+    {
       type: "date",
       fieldName: "created",
       label: "Created Date",
@@ -33,11 +76,17 @@ export default class EvisortPOC extends LightningElement {
     @api title;
     @track data = mockData;
     @track columns = columns;
+    @track clauseColumns = clauseColumns;
+
 
      logoPngUrl = Evisort_Resources + '/evisortResources/logo.png';
      logoJpgUrl = Evisort_Resources + '/evisortResources/logo.jpg';
      logoSvgUrl = Evisort_Resources + '/evisortResources/evisortLogo.svg#colorLogo';
      iconSvgUrl = Evisort_Resources + '/evisortResources/evisortIcon.svg#colorIcon';
+     apiSetupGifUrl = Evisort_Resources + '/evisortResources/apiKeySetup.gif';
+     namedCredentialGifUrl = Evisort_Resources + '/evisortResources/namedCredentialSetup.gif';
+
+
 
      isValid = false;
 

@@ -1,0 +1,67 @@
+<template>
+
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon src={iconSvgUrl} class="slds-var-m-bottom_small" alternative-text="Evisort Icon">
+            </lightning-icon> {title}
+        </h3>
+        <div slot="actions">
+            <lightning-button label="Evisort Config" title="Open Evisort Configuration Page"
+                icon-name="utility:new_window" class="slds-var-m-left_x-small"></lightning-button>
+            <lightning-button variant="brand" label="Save and Apply" title="Save and Apply" icon-name="utility:save"
+                class="slds-var-m-left_x-small"></lightning-button>
+        </div>
+        <div class="slds-var-p-horizontal_small slds-scrollable">
+            <lightning-accordion allow-multiple-sections-open active-section-name={activeSections}>
+                <lightning-accordion-section name="A" label="Field Section Uno">
+                    <div class="slds-grid slds-gutters slds-wrap slds-theme_shade">
+                        <lightning-input type="date" label="Alpha Label"
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-vertical_small">
+                        </lightning-input>
+                        <lightning-input type="text" label="Bravo Label"
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-vertical_small">
+                        </lightning-input>
+                        <lightning-input type="date" label="Charlie Label"
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-vertical_small">
+                        </lightning-input>
+                        <lightning-input type="text" label="Delta Label"
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-vertical_small">
+                        </lightning-input>
+                        <lightning-combobox label="Echo Label" value="Default" options={options}
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-vertical_small">
+                        </lightning-combobox>
+                        <lightning-combobox label="Foxtrot Label" value="Default" options={options}
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-vertical_small">
+                        </lightning-combobox>
+                    </div>
+                </lightning-accordion-section>
+
+                <lightning-accordion-section name="B" label="Field Section Dos">
+                    <div class="slds-grid slds-gutters slds-wrap slds-theme_shade">
+                        <lightning-input type="date" label="Golf Label"
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-vertical_small">
+                        </lightning-input>
+                        <lightning-input type="text" label="Hotel Label"
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-vertical_small">
+                        </lightning-input>
+                        <lightning-combobox label="India Label" value="Default" options={options}
+                            class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_1-of-3 slds-var-p-vertical_small">
+                        </lightning-combobox>
+                    </div>
+                </lightning-accordion-section>
+
+                <lightning-accordion-section name="C" label="Clause Section Tres">
+                    <div class="slds-grid slds-gutters slds-wrap slds-theme_shade">
+                        <lightning-textarea label="Clause Alpha" value="initial value"
+                            class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-var-p-vertical_small">
+                        </lightning-textarea>
+                        <lightning-textarea label="Clause Omega" value="initial value"
+                            class="slds-col slds-size_1-of-1 slds-large-size_1-of-2 slds-var-p-vertical_small">
+                        </lightning-textarea>
+                    </div>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </div>
+    </lightning-card>
+
+</template>

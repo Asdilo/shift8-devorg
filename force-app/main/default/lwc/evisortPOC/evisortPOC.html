@@ -14,6 +14,8 @@
                 </div>
             </div>
             <div class="slds-grid slds-grid_vertical-align-center">
+                <lightning-button label="Pull From Evisort" title="Pull From Evisort" icon-name="utility:download"
+                    class="slds-var-m-left_x-small"></lightning-button>
                 <lightning-button label="Evisort Documentation" title="Open Evisort Documentation"
                     icon-name="utility:new_window" class="slds-var-m-left_x-small"></lightning-button>
             </div>
@@ -187,8 +189,6 @@
                             dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </p>
                         <div class="slds-var-p-vertical_medium">
-                            <lightning-button label="Pull From Evisort" title="Pull From Evisort"
-                                icon-name="utility:download" class="slds-var-m-left_x-small"></lightning-button>
                             <lightning-button variant="brand" label="Save and Apply" title="Save and Apply"
                                 icon-name="utility:save" class="slds-var-m-left_x-small"></lightning-button>
                         </div>
@@ -213,11 +213,11 @@
                             laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
                             dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                         </p>
-                        <div class="slds-var-p-vertical_medium">
-                            <lightning-button label="Pull From Evisort" title="Pull From Evisort"
-                                icon-name="utility:download" class="slds-var-m-left_x-small"></lightning-button>
+                        <div class="slds-var-p-vertical_medium slds-grid slds-grid_align-center slds-grid_vertical-align-center">
+                            <lightning-input label="Sync Incoming Provisions As" type="toggle">
+                            </lightning-input>
                             <lightning-button variant="brand" label="Save and Apply" title="Save and Apply"
-                                icon-name="utility:save" class="slds-var-m-left_x-small"></lightning-button>
+                                icon-name="utility:save" class="slds-var-m-left_medium"></lightning-button>
                         </div>
                     </div>
                 </div>
@@ -242,12 +242,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="slds-grid slds-gutters">
-                    <div class="slds-col slds-size_1-of-2">
-                        <lightning-card title="Leverage Custom Notifications" icon-name="standard:custom_notification">
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_medium">
+                        <lightning-card title="Admin Setup Guide" icon-name="doctype:pdf">
                             <div slot="actions">
-                                <lightning-button label="Set Up Notifications" icon-name="utility:new_window"
-                                    class="slds-var-m-left_small">
+                                <lightning-button label="Open Admin Guide" icon-name="doctype:pdf" class="slds-var-m-left_small">
                                 </lightning-button>
                             </div>
                             <div class="slds-grid slds-grid_vertical slds-var-p-around_medium">
@@ -264,7 +263,7 @@
                         </lightning-card>
                     </div>
 
-                    <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_medium">
                         <lightning-card title="Assign Users" icon-name="standard:people">
                             <div slot="actions">
                                 <lightning-button label="Set Up User Assignments" icon-name="utility:new_window"
@@ -279,6 +278,43 @@
                                     irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                                     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
                                     deserunt mollit anim id est laborum.
+                                </p>
+                            </div>
+                        </lightning-card>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_medium">
+                        <lightning-card title="Reports and Analytics" icon-name="standard:report">
+                            <div slot="actions">
+                                <lightning-button label="Open Reports and Charts" icon-name="utility:new_window"
+                                    class="slds-var-m-left_small">
+                                </lightning-button>
+                            </div>
+                            <div class="slds-grid slds-grid_vertical slds-var-p-around_medium">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                                    irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                    pariatur.
+                                </p>
+                            </div>
+                        </lightning-card>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-var-m-bottom_medium">
+                        <lightning-card title="Leverage Custom Notifications" icon-name="standard:custom_notification">
+                            <div slot="actions">
+                                <lightning-button label="Set Up Notifications" icon-name="utility:new_window"
+                                    class="slds-var-m-left_small">
+                                </lightning-button>
+                            </div>
+                            <div class="slds-grid slds-grid_vertical slds-var-p-around_medium">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                </p>
+                                <p>
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                    mollit anim id est laborum.
                                 </p>
                             </div>
                         </lightning-card>

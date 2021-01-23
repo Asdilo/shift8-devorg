@@ -1,15 +1,15 @@
 <template>
-    <div class={classes} style={styles}>
+    <div class={classes} style={styles} >
         <lightning-card>
             <h2 slot="title">
-                <lightning-icon icon-name={icon} size="medium" class="slds-m-right_small"></lightning-icon>
+                <lightning-icon icon-name={icon} size="medium" class="slds-var-m-right_small"></lightning-icon>
                 <strong class="slds-text-heading_small">{title}</strong>
             </h2>
             <video controls>
                 <source src={source} type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-            <div class="slds-m-around_medium slds-text-heading_small">
+            <div class="slds-var-m-around_medium slds-text-heading_small">
                 {text}
             </div>
         </lightning-card>

@@ -1,9 +1,15 @@
 import { LightningElement } from 'lwc';
+import VERTAFORE_RESOURCES from '@salesforce/resourceUrl/vertaforeDemo';
+
 
 export default class VertaforeOnboarding extends LightningElement {
 
     isModalOpen = false;
+    comboValue = 'type1';
     activeSections = ['One'];
+    sirconImgUrl = VERTAFORE_RESOURCES + '/sirconlogo.png';
+    vertaforeSvgUrl = VERTAFORE_RESOURCES + '/vertaforelogo.svg';
+
 
     //Modal UI show/hide
     modalOpen() {
@@ -12,5 +18,19 @@ export default class VertaforeOnboarding extends LightningElement {
 
     modalClose() {
         this.isModalOpen = false;
+    }
+
+    //Combobox handler
+    handleComboChange(event) {
+        this.comboValue = event.detail.value;
+    }
+
+    //Getter For UI
+    get options() {
+        return [
+            { label: 'Type One', value: 'type1' },
+            { label: 'Type Two', value: 'type2' },
+            { label: 'Type Three', value: 'type3' },
+        ];
     }
 }

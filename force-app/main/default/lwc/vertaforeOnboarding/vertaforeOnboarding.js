@@ -1,9 +1,11 @@
-import { LightningElement } from 'lwc';
-import VERTAFORE_RESOURCES from '@salesforce/resourceUrl/vertaforeDemo';
+import { LightningElement, api } from 'lwc';
+import VERTAFORE_RESOURCES from '@salesforce/resourceUrl/vertaforeResources';
 
 
 export default class VertaforeOnboarding extends LightningElement {
 
+    @api linkText;
+    @api linkUrl;
     isModalOpen = false;
     comboValue = 'type1';
     activeSections = ['One'];

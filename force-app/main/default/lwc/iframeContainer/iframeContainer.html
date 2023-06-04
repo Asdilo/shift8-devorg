@@ -1,0 +1,16 @@
+<template>
+    <div class={classes} style={styles}>
+        <lightning-card>
+            <h2 slot="title">
+                <lightning-icon icon-name={icon} size="medium" class="slds-var-m-right_small"></lightning-icon>
+                <strong class="slds-text-heading_small">{title}</strong>
+            </h2>
+            <div class="container">
+                <iframe src={source} allowfullscreen></iframe>
+            </div>
+            <div class="slds-var-m-around_medium slds-text-heading_small">
+                {text}
+            </div>
+        </lightning-card>
+    </div>
+</template>

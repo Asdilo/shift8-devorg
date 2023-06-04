@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Data Highlights</masterLabel>
+    <description>Custom component that displays summarized data for a given data set. 
+        Layout should be flexible and able to accommodate a varietyof 1-6 data points for
+        Ideally, there is at least two data points available when implementing this component.
+    </description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+            <property name="title" type="String" default="Data Highlights" label="Component Title"/>
+            <property name="showIcon" type="boolean" default="false" label="Show Component Icon?"/>
+            <property name="icon" type="String" default=" " label="Component Icon"/>
+            <property name="kpiText" type="String" default="Since Last Visit" label="KPI Text"/>
+            <property name="classes" type="String" default=" " label="Enter SLDS Classes"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

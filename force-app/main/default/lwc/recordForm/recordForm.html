@@ -1,0 +1,13 @@
+<template>
+<!-- Component will only render if there are fields.
+    This component will automaticall gather the recordId and object name from the record it is on -->
+    <template if:true={fieldList}>
+        <lightning-record-form 
+            record-id={recordId} 
+            object-api-name={objectApiName} 
+            fields={fieldList} 
+            columns={columns}
+            mode="view">
+        </lightning-record-form>
+    </template>
+</template>

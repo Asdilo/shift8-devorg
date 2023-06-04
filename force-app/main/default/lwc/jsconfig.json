@@ -1,0 +1,67 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "baseUrl": ".",
+        "paths": {
+            "c/cssAnimations": [
+                "cssAnimations/cssAnimations.js"
+            ],
+            "c/customList": [
+                "customList/customList.js"
+            ],
+            "c/customTable": [
+                "customTable/customTable.js"
+            ],
+            "c/iframeContainer": [
+                "iframeContainer/iframeContainer.js"
+            ],
+            "c/inputListBuilder": [
+                "inputListBuilder/inputListBuilder.js"
+            ],
+            "c/listBuilderEmpty": [
+                "listBuilderEmpty/listBuilderEmpty.js"
+            ],
+            "c/listMedications": [
+                "listMedications/listMedications.js"
+            ],
+            "c/tileList": [
+                "tileList/tileList.js"
+            ],
+            "c/videoPlayer": [
+                "videoPlayer/videoPlayer.js"
+            ],
+            "c/recordForm": [
+                "recordForm/recordForm.js"
+            ],
+            "c/lwcExample": [
+                "lwcExample/lwcExample.js"
+            ],
+            "c/pocIqviaSVP": [
+                "pocIqviaSVP/pocIqviaSVP.js"
+            ],
+            "c/pocIqviaSVT": [
+                "pocIqviaSVT/pocIqviaSVT.js"
+            ],
+            "c/dataHighlights": [
+                "dataHighlights/dataHighlights.js"
+            ],
+            "c/pocTreeGrid": [
+                "pocTreeGrid/pocTreeGrid.js"
+            ]
+        }
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    },
+    "paths": {
+        "c/*": [
+            "*"
+        ]
+    }
+}

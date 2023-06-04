@@ -1,0 +1,12 @@
+.evisort-tab-summary {
+max-width: 50vw;
+}
+
+.evisort-sync-table, .evisort-sync-list {
+    max-height: 50vh;
+}
+
+.evisort-svg {
+    max-width: 200px;
+    max-height: 50px;
+}

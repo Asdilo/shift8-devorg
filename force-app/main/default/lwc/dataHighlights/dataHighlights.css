@@ -1,0 +1,12 @@
+.SMALL > .slds-grid > .slds-col {
+    flex: 1 1 100%;
+    border-right: none;
+}
+
+.slds-grid > div:last-child {
+    border-right:none;
+}
+
+.bold {
+    font-weight: 500;
+}

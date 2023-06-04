@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>54.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Profile Card List</masterLabel>
+    <description>This custom component is used to demonstrate key LWC UI concepts for training</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage,lightningCommunity__Default">
+            <property name="title" type="String" default="iframe Container" label="Component Title"/>
+            <property name="text" type="String" default="Description Text Here" label="Component Text"/>
+            <property name="classes" type="String" default=" " label="Enter CSS Classes"/>
+            <property name="styles" type="String" default=" " label="Enter CSS Styles"/>
+
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

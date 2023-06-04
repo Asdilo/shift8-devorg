@@ -1,0 +1,23 @@
+<template>
+    <div class={classes} style={styles} >
+        <h2>{title}</h2>
+        <p>{text}</p>
+        <div class="slds-grid slds-gutters slds-wrap">
+            <template for:each={profiles} for:item="profile">
+                <div class="slds-col slds-var-m-bottom_medium slds-size_1-of-3" key={profile.id}>
+                    <lightning-card title={profile.full_name}>
+                        <lightning-button label="New" slot="actions"></lightning-button>
+                        <div class="slds-grid slds-grid_vertical">
+                            <div class="slds-col">
+                                <img src={profile.avatar} title={profile.first_name} alt="Profile Image">
+                            </div>
+                            <div class="slds-col slds-var-p-horizontal_small">
+                                <p> {profile.text} </p>
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

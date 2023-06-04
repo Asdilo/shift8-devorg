@@ -1,0 +1,8 @@
+.this {
+    max-height: 80vh;
+    
+}
+
+.selected-visit {
+    border-color: var(--lwc-colorBorderBrand);
+}

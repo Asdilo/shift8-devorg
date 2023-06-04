@@ -1,0 +1,57 @@
+<template>
+    <lightning-card>
+        <h2 slot="title">
+            <lightning-icon icon-name={icon} size="small" class="slds-var-m-right_small"></lightning-icon>
+            <strong class="slds-text-heading_small">{title} ({recordNum})</strong>
+        </h2>
+        <div class="slds-grid" slot="actions">
+            <lightning-combobox name="filter" placeholder="Filter Search" value={value} options={options}
+                class="slds-var-m-right_small">
+            </lightning-combobox>
+            <lightning-input name="search" placeholder="Search Subjects" type="search"></lightning-input>
+        </div>
+<!--         The for:each will loop through the array of objects from the svtData object
+        There is an array in this object that will also populate the datatable for each visit -->
+        <template for:each={svtData} for:item="data">
+            <lightning-accordion class="slds-box slds-box_xx-small slds-var-m-around_medium" key={data.subjectId}
+                allow-multiple-sections-open active-section-name={activeSubjects}>
+                <lightning-accordion-section name={data.subjectId} label={data.label}>
+                    <lightning-accordion class="slds-border_bottom" allow-multiple-sections-open
+                        active-section-name={activeVisits}>
+                        <template for:each={data.visit} for:item="visit">
+                            <lightning-accordion-section class="" key={visit.date} name={visit.date} label={visit.date}>
+                                <lightning-datatable key-field="items" data={visit.verification} columns={svtColumns}
+                                    hide-checkbox-column>
+                                </lightning-datatable>
+                                <div class="slds-var-m-vertical_small">
+                                    <lightning-button label="Add Verification Item" title="Add Verification Item"
+                                        class="slds-var-m-left_x-small"></lightning-button>
+                                </div>
+                            </lightning-accordion-section>
+                        </template>
+                    </lightning-accordion>
+                </lightning-accordion-section>
+            </lightning-accordion>
+        </template>
+<!-- THIS IS AN ALTERNATE VERSION FOR THE UI USING CARDS AND SHADED ACCORDIONS -->
+        <template for:each={svtData} for:item="data">
+            <lightning-card key={data.subjectId} title={data.label}>
+                <lightning-accordion class="slds-border_bottom" allow-multiple-sections-open
+                    active-section-name={activeSubjects}>
+                    <template for:each={data.visit} for:item="visit">
+                        <lightning-accordion-section class="slds-theme_shade" key={visit.date} name={visit.date} label={visit.date}>
+                            <lightning-datatable key-field="items" data={visit.verification} columns={svtColumns}
+                                hide-checkbox-column>
+                            </lightning-datatable>
+                            <div class="slds-var-m-vertical_small">
+                                <lightning-button label="Add Verification Item" title="Add Verification Item"
+                                    class="slds-var-m-left_x-small"></lightning-button>
+                            </div>
+                        </lightning-accordion-section>
+                    </template>
+                </lightning-accordion>
+            </lightning-card>
+        </template>
+<!-- END ALTERNATE VERSION -->
+    </lightning-card>
+</template>

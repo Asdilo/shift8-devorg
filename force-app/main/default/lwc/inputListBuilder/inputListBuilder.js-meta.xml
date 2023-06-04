@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="inputListBuilder">
+    <apiVersion>46.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Input List Builder</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+        <targetConfigs>   
+        <targetConfig targets="lightning__HomePage,lightning__RecordPage,lightning__AppPage">
+            <property name="title" type="String" default="Input List Builder" label="Enter the title"/>
+            <property name="showEmpty" type="Boolean" default="false" label="Show Empty State?"/><!-- Use this only to see what it looks like in dev -->
+            <property name="listType" datasource="typeA,type2,type3" type="String" label="Choose List" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

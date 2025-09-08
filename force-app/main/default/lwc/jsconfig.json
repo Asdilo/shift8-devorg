@@ -47,6 +47,9 @@
             ],
             "c/pocTreeGrid": [
                 "pocTreeGrid/pocTreeGrid.js"
+            ],
+            "c/*": [
+                "*"
             ]
         }
     },

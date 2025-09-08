@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="cssAnimations">
-    <apiVersion>46.0</apiVersion>
+    <apiVersion>54.0</apiVersion>
     <isExposed>true</isExposed>
     <masterLabel>CSS Animations For SLDS</masterLabel>
     <description>This is a demo component for showing various implementations of CSS animations leveraging SLDS.</description>

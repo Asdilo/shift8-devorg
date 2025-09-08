@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Record Information" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <p><strong>Record ID:</strong> {currentRecordId}</p>
+            
+            <template if:true={isDataLoaded}>
+                <p><strong>Name:</strong> {accountName}</p>
+                <p><strong>Phone:</strong> {accountPhone}</p>
+                <p><strong>Industry:</strong> {accountIndustry}</p>
+            </template>
+            
+            <template if:true={account.error}>
+                <p class="slds-text-color_error">Error loading record data</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,325 @@
+<template>
+    <div class="slds-card">
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="slds-is-relative">
+                <lightning-spinner alternative-text="Loading contact details..." size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error State -->
+        <template if:true={error}>
+            <div class="slds-card__body slds-card__body_inner">
+                <div class="slds-illustration slds-illustration_small">
+                    <div class="slds-text-color_error slds-text-heading_medium">
+                        Unable to load contact details
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Contact Details -->
+        <template if:true={contact}>
+            <!-- Header -->
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <div class="slds-media__figure">
+                        <span class="slds-icon_container slds-icon-standard-contact">
+                            <lightning-icon icon-name="standard:contact" size="medium"></lightning-icon>
+                        </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <h2 class="slds-card__header-title slds-text-heading_medium">
+                            {contact.Name}
+                        </h2>
+                        <p class="slds-text-body_small slds-line-height_reset">
+                            Contact Details & Related Information
+                        </p>
+                    </div>
+                </header>
+                <div class="slds-no-flex">
+                    <lightning-button-icon 
+                        icon-name="utility:refresh" 
+                        variant="border-filled" 
+                        onclick={handleRefresh}
+                        title="Refresh">
+                    </lightning-button-icon>
+                </div>
+            </div>
+
+            <div class="slds-card__body slds-card__body_inner">
+                <!-- Contact Information Section -->
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme_shade">
+                        <span class="slds-truncate slds-p-horizontal_small">Contact Information</span>
+                    </h3>
+                    <div class="slds-section__content slds-p-around_medium">
+                        <div class="slds-grid slds-gutters slds-wrap">
+                            <div class="slds-col slds-size_1-of-2">
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label slds-text-body_small">Name</label>
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-text-body_regular">{contact.Name}</span>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-m-top_small">
+                                    <label class="slds-form-element__label slds-text-body_small">Email</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-formatted-email if:true={contact.Email} value={contact.Email}>
+                                        </lightning-formatted-email>
+                                        <span if:false={contact.Email} class="slds-text-color_weak">Not provided</span>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-m-top_small">
+                                    <label class="slds-form-element__label slds-text-body_small">Phone</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-formatted-phone if:true={contact.Phone} value={contact.Phone}>
+                                        </lightning-formatted-phone>
+                                        <span if:false={contact.Phone} class="slds-text-color_weak">Not provided</span>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-m-top_small">
+                                    <label class="slds-form-element__label slds-text-body_small">Mobile Phone</label>
+                                    <div class="slds-form-element__control">
+                                        <lightning-formatted-phone if:true={contact.MobilePhone} value={contact.MobilePhone}>
+                                        </lightning-formatted-phone>
+                                        <span if:false={contact.MobilePhone} class="slds-text-color_weak">Not provided</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <div class="slds-form-element">
+                                    <label class="slds-form-element__label slds-text-body_small">Title</label>
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-text-body_regular">
+                                            {contact.Title}
+                                            <template if:false={contact.Title}>
+                                                <span class="slds-text-color_weak">Not provided</span>
+                                            </template>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-m-top_small">
+                                    <label class="slds-form-element__label slds-text-body_small">Department</label>
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-text-body_regular">
+                                            {contact.Department}
+                                            <template if:false={contact.Department}>
+                                                <span class="slds-text-color_weak">Not provided</span>
+                                            </template>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-m-top_small">
+                                    <label class="slds-form-element__label slds-text-body_small">Mailing Address</label>
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-text-body_regular">{mailingAddress}</span>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-m-top_small">
+                                    <label class="slds-form-element__label slds-text-body_small">Created Date</label>
+                                    <div class="slds-form-element__control">
+                                        <span class="slds-text-body_regular">{formattedCreatedDate}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Account Section -->
+                <template if:true={hasAccount}>
+                    <div class="slds-section slds-is-open slds-m-top_medium">
+                        <h3 class="slds-section__title slds-theme_shade">
+                            <span class="slds-truncate slds-p-horizontal_small">Related Account</span>
+                        </h3>
+                        <div class="slds-section__content slds-p-around_medium">
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-account">
+                                        <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <div class="slds-grid slds-gutters slds-wrap">
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label slds-text-body_small">Account Name</label>
+                                                <div class="slds-form-element__control">
+                                                    <lightning-button 
+                                                        variant="base" 
+                                                        label={account.Name} 
+                                                        onclick={navigateToAccount}
+                                                        class="slds-text-link">
+                                                    </lightning-button>
+                                                </div>
+                                            </div>
+                                            <div class="slds-form-element slds-m-top_small">
+                                                <label class="slds-form-element__label slds-text-body_small">Type</label>
+                                                <div class="slds-form-element__control">
+                                                    <span class="slds-text-body_regular">
+                                                        {account.Type}
+                                                        <template if:false={account.Type}>
+                                                            <span class="slds-text-color_weak">Not specified</span>
+                                                        </template>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label slds-text-body_small">Industry</label>
+                                                <div class="slds-form-element__control">
+                                                    <span class="slds-text-body_regular">
+                                                        {account.Industry}
+                                                        <template if:false={account.Industry}>
+                                                            <span class="slds-text-color_weak">Not specified</span>
+                                                        </template>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="slds-form-element slds-m-top_small">
+                                                <label class="slds-form-element__label slds-text-body_small">Phone</label>
+                                                <div class="slds-form-element__control">
+                                                    <lightning-formatted-phone if:true={account.Phone} value={account.Phone}>
+                                                    </lightning-formatted-phone>
+                                                    <span if:false={account.Phone} class="slds-text-color_weak">Not provided</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Cases Summary Section -->
+                <template if:true={caseSummary}>
+                    <div class="slds-section slds-is-open slds-m-top_medium">
+                        <h3 class="slds-section__title slds-theme_shade">
+                            <span class="slds-truncate slds-p-horizontal_small">Cases Summary</span>
+                        </h3>
+                        <div class="slds-section__content slds-p-around_medium">
+                            <div class="slds-grid slds-gutters slds-wrap">
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-align_center">
+                                        <div class="slds-text-heading_large slds-text-color_brand">
+                                            {caseSummary.totalCases}
+                                        </div>
+                                        <div class="slds-text-body_small">Total Cases</div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-align_center">
+                                        <div class="slds-text-heading_large slds-text-color_warning">
+                                            {caseSummary.openCases}
+                                        </div>
+                                        <div class="slds-text-body_small">Open Cases</div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-align_center">
+                                        <div class="slds-text-heading_large slds-text-color_success">
+                                            {caseSummary.closedCases}
+                                        </div>
+                                        <div class="slds-text-body_small">Closed Cases</div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-4">
+                                    <div class="slds-text-align_center">
+                                        <div class="slds-text-heading_large slds-text-color_error">
+                                            {caseSummary.highPriorityCases}
+                                        </div>
+                                        <div class="slds-text-body_small">High Priority</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Cases List -->
+                    <template if:true={hasCases}>
+                        <div class="slds-section slds-is-open slds-m-top_medium">
+                            <h3 class="slds-section__title slds-theme_shade">
+                                <span class="slds-truncate slds-p-horizontal_small">Recent Cases</span>
+                            </h3>
+                            <div class="slds-section__content">
+                                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th scope="col">
+                                                <div class="slds-truncate">Case Number</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate">Subject</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate">Status</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate">Priority</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate">Created Date</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <template for:each={recentCases} for:item="cases">
+                                            <tr key={cases.Id}>
+                                                <td>
+                                                    <lightning-button 
+                                                        variant="base" 
+                                                        label={cases.CaseNumber}
+                                                        data-case-id={cases.Id}
+                                                        onclick={navigateToCase}
+                                                        class="slds-text-link">
+                                                    </lightning-button>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate">{cases.Subject}</div>
+                                                </td>
+                                                <td>
+                                                    <lightning-badge label={cases.Status} variant="base">
+                                                    </lightning-badge>
+                                                </td>
+                                                <td>
+                                                    <lightning-badge label={cases.Priority} variant="base">
+                                                    </lightning-badge>
+                                                </td>
+                                                <td>
+                                                    <lightning-formatted-date-time 
+                                                        value={cases.CreatedDate}
+                                                        year="numeric" 
+                                                        month="short" 
+                                                        day="2-digit">
+                                                    </lightning-formatted-date-time>
+                                                </td>
+                                            </tr>
+                                        </template>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- No Cases State -->
+                    <template if:false={hasCases}>
+                        <div class="slds-section slds-is-open slds-m-top_medium">
+                            <div class="slds-section__content slds-p-around_medium">
+                                <div class="slds-text-align_center">
+                                    <lightning-icon icon-name="standard:case" size="large" class="slds-m-bottom_small"></lightning-icon>
+                                    <h3 class="slds-text-heading_medium">No Cases Found</h3>
+                                    <p class="slds-text-body_regular slds-text-color_weak">
+                                        This contact doesn't have any related cases yet.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>
